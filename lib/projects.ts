@@ -164,3 +164,21 @@ export function getProjectBySlug(slug: string): Project | undefined {
 export function getAllProjects(): Project[] {
   return projects;
 }
+
+export interface WorkCardData {
+  name: string;
+  scope: string;
+  location: string;
+  sheet: string;
+  slug: string | null;
+  label: string;
+}
+
+export const workCards: WorkCardData[] = [
+  { name: 'Full Kitchen & Main-Floor Remodel', scope: 'Whole-Home', location: 'North Minneapolis', sheet: 'PRJ‑01', slug: '/work/kitchen-remodel', label: 'Kitchen & main-floor remodel' },
+  { name: 'Asphalt Roof Tear-Off',             scope: 'Exterior',   location: 'Camden',           sheet: 'PRJ‑02', slug: '/work/roof-tearoff',   label: 'Asphalt roof tear-off'    },
+  { name: 'Full-Frame Window Overhaul',         scope: 'Windows',    location: 'Webber–Camden',    sheet: 'PRJ‑03', slug: null,                   label: 'Full-frame window overhaul' },
+  { name: 'Rear Deck & Stairs',                 scope: 'Decking',    location: 'Victory',          sheet: 'PRJ‑04', slug: null,                   label: 'Rear deck & stairs'       },
+  { name: 'Basement Finish',                    scope: 'Basement',   location: 'Folwell',          sheet: 'PRJ‑05', slug: null,                   label: 'Basement finish + egress' },
+  { name: 'Stucco Repair & Bump-Out',           scope: 'Addition',   location: 'Jordan',           sheet: 'PRJ‑06', slug: null,                   label: 'Stucco repair & bump-out' },
+];

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import CtaBand from '@/components/CtaBand';
 import WorkCard from '@/components/WorkCard';
 import AboutPortrait from '@/components/AboutPortrait';
+import { workCards } from '@/lib/projects';
 
 export const metadata: Metadata = {
   title: 'Baker Built Construction — Minneapolis General Contractor',
@@ -45,8 +46,8 @@ export default function Home() {
                   className="hero-slot"
                   src="/hero-cabin.jpg"
                   alt="Custom home built by Baker Built Construction"
-                  width={1200}
-                  height={926}
+                  width={1800}
+                  height={1200}
                   priority
                 />
               </div>
@@ -123,14 +124,7 @@ export default function Home() {
             <Link className="btn btn-ghost reveal d1" href="/work">All Projects <span className="arw">→</span></Link>
           </div>
           <div className="work-grid reveal d1">
-            {[
-              { name: 'Full Kitchen & Main-Floor Remodel', scope: 'Whole-Home', location: 'North Minneapolis', sheet: 'PRJ‑01', slug: '/work/kitchen-remodel', label: 'Kitchen & main-floor remodel' },
-              { name: 'Asphalt Roof Tear-Off', scope: 'Exterior', location: 'Camden', sheet: 'PRJ‑02', slug: '/work/roof-tearoff', label: 'Asphalt roof tear-off' },
-              { name: 'Full-Frame Window Overhaul', scope: 'Windows', location: 'Webber–Camden', sheet: 'PRJ‑03', slug: null, label: 'Full-frame window overhaul' },
-              { name: 'Rear Deck & Stairs', scope: 'Decking', location: 'Victory', sheet: 'PRJ‑04', slug: null, label: 'Rear deck & stairs' },
-              { name: 'Basement Finish', scope: 'Basement', location: 'Folwell', sheet: 'PRJ‑05', slug: null, label: 'Basement finish + egress' },
-              { name: 'Stucco Repair & Bump-Out', scope: 'Addition', location: 'Jordan', sheet: 'PRJ‑06', slug: null, label: 'Stucco repair & bump-out' },
-            ].map((card) => (
+            {workCards.map((card) => (
               <WorkCard key={card.sheet} {...card} />
             ))}
           </div>

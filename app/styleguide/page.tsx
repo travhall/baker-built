@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Style Guide — Baker Built Construction',
+  robots: { index: false, follow: false },
 };
 
 /* ---- small helpers used only on this page ---- */
