@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Style Guide — Baker Built Construction',
+  title: 'Style Guide',
   robots: { index: false, follow: false },
 };
 

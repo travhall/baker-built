@@ -11,7 +11,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
-  return { title: `${project.title} — Baker Built Construction` };
+  return {
+    title: project.title,
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+    },
+  };
 }
 
 export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {

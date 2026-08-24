@@ -3,7 +3,11 @@ import CtaBand from '@/components/CtaBand';
 import AboutPortrait from '@/components/AboutPortrait';
 
 export const metadata: Metadata = {
-  title: 'About — Baker Built Construction',
+  title: 'About',
+  openGraph: {
+    title: 'About — Baker Built Construction',
+    description: 'One contact. One person accountable. No job passed down a chain — from the first measurement to the final walk-through.',
+  },
 };
 
 export default function About() {

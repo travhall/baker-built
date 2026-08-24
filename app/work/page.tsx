@@ -4,7 +4,11 @@ import WorkCard from '@/components/WorkCard';
 import { workCards } from '@/lib/projects';
 
 export const metadata: Metadata = {
-  title: 'Work — Baker Built Construction',
+  title: 'Work',
+  openGraph: {
+    title: 'Work — Baker Built Construction',
+    description: 'A working record of recent projects across the Twin Cities. Photography is added as jobs wrap — open any sheet to see the full story.',
+  },
 };
 
 export default function Work() {

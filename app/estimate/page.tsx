@@ -3,7 +3,11 @@ import Link from 'next/link';
 import EstimateForm from '@/components/EstimateForm';
 
 export const metadata: Metadata = {
-  title: 'Request an Estimate — Baker Built Construction',
+  title: 'Request an Estimate',
+  openGraph: {
+    title: 'Request an Estimate — Baker Built Construction',
+    description: "Fill out the work-order request below or call direct. You'll hear back within one business day — from the person who'll actually do the work.",
+  },
 };
 
 export default function Estimate() {

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { cloneElement } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +7,12 @@ import WorkCard from '@/components/WorkCard';
 import AboutPortrait from '@/components/AboutPortrait';
 import { workCards } from '@/lib/projects';
 import { getAllServices } from '@/lib/services';
+
+export const metadata: Metadata = {
+  openGraph: {
+    description: "Baker Built Construction is Nate Baker — a Minneapolis general contractor handling remodels, roofing, windows, decks, and new builds. Planned with care, measured twice, and finished like it's his own home.",
+  },
+};
 
 export default function Home() {
   return (

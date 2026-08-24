@@ -3,7 +3,11 @@ import CtaBand from '@/components/CtaBand';
 import { getAllServices } from '@/lib/services';
 
 export const metadata: Metadata = {
-  title: 'Services — Baker Built Construction',
+  title: 'Services',
+  openGraph: {
+    title: 'Services — Baker Built Construction',
+    description: 'A full-service residential scope — from a single window to a whole new structure. Every job planned, permitted where required, and warrantied.',
+  },
 };
 
 const services = getAllServices();
