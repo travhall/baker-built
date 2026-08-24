@@ -10,8 +10,8 @@ export default function Footer() {
             <Image
               src="/bb-logo-ondark.png"
               alt="Baker Built Construction"
-              width={160}
-              height={80}
+              width={480}
+              height={480}
               style={{ height: "80px", width: "auto", marginBottom: "20px" }}
             />
             <div className="tag">Take your dream and make it a reality.</div>

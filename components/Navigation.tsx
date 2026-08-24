@@ -48,8 +48,8 @@ export default function Navigation() {
             <Image
               src="/bb-logo-transparent.png"
               alt="Baker Built Construction logo"
-              width={92}
-              height={46}
+              width={480}
+              height={480}
               style={{ height: '46px', width: 'auto' }}
               priority
             />
