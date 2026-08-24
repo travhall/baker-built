@@ -16,8 +16,12 @@ export default function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close drawer on route change
-  useEffect(() => { setOpen(false); }, [pathname]);
+  // Close drawer on route change (adjusting state during render, not in an effect)
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setOpen(false);
+  }
 
   // Lock body scroll while drawer is open
   useEffect(() => {
