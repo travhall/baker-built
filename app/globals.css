@@ -13,9 +13,8 @@
      color: var(--accent) text declaration without re-checking contrast.
      Exception: ~10 sites where --accent text sits on the dark --ink
      background (.proof, .cta-band, .pj-outcome, .footer hover, nav-drawer)
-     still fail (3.66:1) and are unresolved — --red-deep is worse there
-     (2.62:1) and no existing token passes; needs a new lighter accent
-     value, tracked as a follow-up. See plan 010. */
+     fail (3.66:1) and --red-deep is worse there (2.62:1) — these use
+     --accent-on-dark instead. See plan 015. */
   --paper: #f4efe3;
   --paper-2: #ece4d4;
   --paper-card: #f8f4ea;
@@ -24,6 +23,11 @@
   --ink-3: #8a8275;
   --red: #ec3b30;
   --red-deep: #c62a21;
+  /* Lighter accent for TEXT on dark (--ink) backgrounds only — --accent
+     fails WCAG AA (3.66:1) and --red-deep is worse (2.62:1) on --ink.
+     Do not use --accent-on-dark on light (--paper) backgrounds — it
+     fails contrast there (2.59:1). */
+  --accent-on-dark: #f16c64;
   --brick: #a8593f;
   --blue: #3c5a73;
   --blue-soft: #6e8499;
@@ -576,7 +580,7 @@ h4 {
   color: var(--paper);
 }
 .nd-link[aria-current="page"] .nd-arw {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .nd-arw {
   font-size: 20px;
@@ -604,7 +608,7 @@ h4 {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 22px;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-on-dark);
   text-decoration: none;
   letter-spacing: 0.02em;
   margin-bottom: 8px;
@@ -1274,7 +1278,7 @@ a.wb-open:hover .arw {
   color: rgba(244, 239, 227, 0.6);
 }
 .proof .marker b {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .proof h2 {
   color: var(--paper);
@@ -1301,7 +1305,7 @@ a.wb-open:hover .arw {
   color: var(--paper);
 }
 .stat .v .u {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .stat .k {
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -1327,7 +1331,7 @@ a.wb-open:hover .arw {
   font-size: 10.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .quote p {
   font-family: var(--font-display), Georgia, serif;
@@ -1546,7 +1550,7 @@ a.wb-open:hover .arw {
   line-height: 1.4;
 }
 .footer .col a:hover {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .footer .bottom {
   display: flex;
@@ -1683,7 +1687,7 @@ a.wb-open:hover .arw {
   margin-bottom: 22px;
 }
 .cta-band .marker b {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .cta-band h2 {
   color: var(--paper);
@@ -1728,7 +1732,7 @@ a.wb-open:hover .arw {
   text-decoration: none;
 }
 .cta-band .callbox .v a:hover {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .cta-band .callbox .sub {
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -2445,7 +2449,7 @@ a.wb-open:hover .arw {
   text-wrap: balance;
 }
 .pj-outcome .pull .em {
-  color: var(--accent);
+  color: var(--accent-on-dark);
   font-style: italic;
 }
 .pj-outcome .by {
@@ -2482,7 +2486,7 @@ a.wb-open:hover .arw {
   color: var(--paper);
 }
 .pj-outcome .result .v .u {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 .pj-outcome .result .k {
   font-family: var(--font-mono), ui-monospace, monospace;
