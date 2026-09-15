@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import CtaBand from '@/components/CtaBand';
 import AboutPortrait from '@/components/AboutPortrait';
+import ProofRecord from '@/components/ProofRecord';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -83,34 +84,7 @@ export default function About() {
       </section>
 
       {/* ===== THE RECORD ===== */}
-      <section className="proof">
-        <div className="proof-tex">
-          <div className="section" style={{padding:'96px 0'}}>
-            <div className="wrap">
-              <div className="marker reveal">The Record</div>
-              <h2 className="h-section reveal" style={{maxWidth:'18ch'}}>Earned the right way — one solid job at a time.</h2>
-              <div className="stat-row reveal d1">
-                <div className="stat"><div className="v">95<span className="u">/100</span></div><div className="k">BuildZoom Score</div></div>
-                <div className="stat"><div className="v">20<span className="u">+</span></div><div className="k">Years Hands-On</div></div>
-                <div className="stat"><div className="v">2017</div><div className="k">LLC Established</div></div>
-                <div className="stat"><div className="v">100<span className="u">%</span></div><div className="k">Nate, On Site</div></div>
-              </div>
-              <div className="quotes reveal d2">
-                <div className="quote">
-                  <div className="qm">Tagline / On Record</div>
-                  <p>&ldquo;Take your dream and make it a reality.&rdquo;</p>
-                  <div className="by">— Baker Built Construction</div>
-                </div>
-                <div className="quote empty">
-                  <div className="qm" style={{color:'rgba(244,239,227,0.55)'}}>Awaiting · Plate Reserved</div>
-                  <p>Your review goes here. We&apos;re collecting them as each Twin Cities project wraps.</p>
-                  <div className="by">— Reserved for a recent client</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProofRecord padding="96px 0" />
 
       {/* ===== CTA BAND ===== */}
       <CtaBand
