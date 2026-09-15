@@ -84,7 +84,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         <div className="wrap">
           <aside className="pj-aside reveal">
             <div className="lbl">The Brief</div>
-            <div className="note">Replace placeholder copy with the real story once the job notes are written up.</div>
           </aside>
           <div className="body">
             {project.brief.map((para, i) => (
@@ -186,8 +185,12 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             <div className="wrap">
               <div>
                 <div className="marker reveal">The Outcome</div>
-                <p className="pull reveal d1">{project.outcomeQuote}</p>
-                <div className="by reveal d1">{project.outcomeBy}</div>
+                {project.outcomeQuote && (
+                  <>
+                    <p className="pull reveal d1">{project.outcomeQuote}</p>
+                    {project.outcomeBy && <div className="by reveal d1">{project.outcomeBy}</div>}
+                  </>
+                )}
               </div>
               <div className="result reveal d2">
                 <div className="r">

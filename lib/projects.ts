@@ -33,8 +33,8 @@ export interface Project {
   phases: Phase[];
   beforeAfter: [GalleryCell, GalleryCell];
   details: GalleryCell[];
-  outcomeQuote: string;
-  outcomeBy: string;
+  outcomeQuote?: string;
+  outcomeBy?: string;
   results: { v: string; u?: string; k: string }[];
   nextSlug: string;
   nextTitle: string;
@@ -87,8 +87,6 @@ export const projects: Project[] = [
       { label: 'Backsplash detail', caption: 'Backsplash',   badge: 'Detail' },
       { label: 'Living-side view',  caption: 'Open Living',  badge: 'Detail' },
     ],
-    outcomeQuote: '"Placeholder for the client\'s own words — what changed about how they use the space, and how the project went. Swap this for a real quote once you\'ve got one."',
-    outcomeBy: '— Reserved for the homeowner · North Minneapolis',
     results: [
       { v: '9', u: ' wk', k: 'Start to Finish' },
       { v: '1',           k: 'Wall Removed'     },
@@ -144,8 +142,6 @@ export const projects: Project[] = [
       { label: 'Ridge vent detail', caption: 'Ridge',   badge: 'Detail' },
       { label: 'Flashing detail',   caption: 'Flashing',badge: 'Detail' },
     ],
-    outcomeQuote: '"Placeholder for the client\'s own words — peace of mind through the next storm, how clean the crew left things. Swap this for a real quote once you\'ve got one."',
-    outcomeBy: '— Reserved for the homeowner · Camden',
     results: [
       { v: '3', u: ' days', k: 'Start to Finish'   },
       { v: '100', u: '%',   k: 'Stripped to Deck'  },
