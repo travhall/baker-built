@@ -6,6 +6,16 @@
    ============================================================ */
 
 :root {
+  /* --ink-3 (3.31:1) and --accent/--red (3.5:1) fail WCAG AA 4.5:1 text
+     contrast on --paper. Kept for non-text use (borders, strokes, ticks).
+     Text-color declarations use --ink-2 (6.95:1) or --red-deep (4.88:1)
+     instead — do not add a new color: var(--ink-3) or
+     color: var(--accent) text declaration without re-checking contrast.
+     Exception: ~10 sites where --accent text sits on the dark --ink
+     background (.proof, .cta-band, .pj-outcome, .footer hover, nav-drawer)
+     still fail (3.66:1) and are unresolved — --red-deep is worse there
+     (2.62:1) and no existing token passes; needs a new lighter accent
+     value, tracked as a follow-up. See plan 010. */
   --paper: #f4efe3;
   --paper-2: #ece4d4;
   --paper-card: #f8f4ea;
@@ -119,7 +129,7 @@ section {
   color: var(--ink-2);
 }
 .mono-red {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .mono-blue {
   color: var(--blue);
@@ -138,7 +148,7 @@ section {
   margin-bottom: 26px;
 }
 .marker b {
-  color: var(--accent);
+  color: var(--red-deep);
   font-weight: 600;
 }
 .marker::before {
@@ -394,7 +404,7 @@ h4 {
   width: 100%;
 }
 .nav-links a[aria-current="page"] {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .nav-links a[aria-current="page"]::after {
   width: 100%;
@@ -416,7 +426,7 @@ h4 {
   white-space: nowrap;
 }
 .nav-phone b {
-  color: var(--accent);
+  color: var(--red-deep);
   font-weight: 600;
 }
 
@@ -461,7 +471,7 @@ h4 {
 .nav.nav-centered .nav-phone .lbl {
   font-size: 9.5px;
   letter-spacing: 0.22em;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .nav.nav-centered .nav-phone b {
   font-size: 15px;
@@ -572,7 +582,7 @@ h4 {
 }
 .nd-link:hover .nd-arw {
   transform: translateX(4px);
-  color: var(--accent);
+  color: var(--red-deep);
 }
 
 .nd-contact {
@@ -646,7 +656,7 @@ h4 {
 }
 .hero h1 .em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .hero .lede {
   margin-bottom: 36px;
@@ -686,7 +696,7 @@ h4 {
   color: var(--ink);
 }
 .hero-meta .it .v .u {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .hero-meta .it .k {
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -731,7 +741,7 @@ h4 {
   font-size: 9.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .plate .titleblock .tv {
   font-family: var(--font-display), Georgia, serif;
@@ -928,10 +938,10 @@ h4 {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
   letter-spacing: 0.14em;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .spec:hover .sno {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .spec .sicon {
   margin: 18px 0 16px;
@@ -1080,7 +1090,7 @@ img.pj-fig-slot {
   width: 100%;
   height: auto;
   padding: 18px;
-  color: var(--ink-3);
+  color: var(--ink-2);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -1156,7 +1166,7 @@ img.pj-fig-slot {
   font-size: 9.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .work-block .wb-meta .tv {
   font-family: var(--font-display), Georgia, serif;
@@ -1166,7 +1176,7 @@ img.pj-fig-slot {
   margin-top: 4px;
 }
 .work-card:hover .wb-meta > div:last-child .tv {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 
 .work-block .wb-open {
@@ -1191,7 +1201,7 @@ a.wb-open:hover {
   color: var(--paper);
 }
 a.wb-open .arw {
-  color: var(--accent);
+  color: var(--red-deep);
   transition: transform 0.2s;
 }
 a.wb-open:hover .arw {
@@ -1199,7 +1209,7 @@ a.wb-open:hover .arw {
   transform: translateX(4px);
 }
 .work-block .wb-open.pending {
-  color: var(--ink-3);
+  color: var(--ink-2);
   cursor: default;
 }
 .work-block .wb-open.pending .st {
@@ -1378,12 +1388,12 @@ a.wb-open:hover .arw {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .form-head .wo .v {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 13px;
-  color: var(--accent);
+  color: var(--red-deep);
   margin-top: 4px;
 }
 .field {
@@ -1434,7 +1444,7 @@ a.wb-open:hover .arw {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
-  color: var(--ink-3);
+  color: var(--ink-2);
   margin-top: 16px;
 }
 
@@ -1457,7 +1467,7 @@ a.wb-open:hover .arw {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
   margin-bottom: 10px;
 }
 .info-block .v {
@@ -1475,7 +1485,7 @@ a.wb-open:hover .arw {
   text-decoration: none;
 }
 .info-block .v a:hover {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .info-block .sub {
   font-family: var(--font-body), system-ui, sans-serif;
@@ -1743,10 +1753,10 @@ a.wb-open:hover .arw {
 }
 .gateway:hover {
   gap: 18px;
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .gateway .arw {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 
 /* services trade rows */
@@ -1791,14 +1801,14 @@ a.wb-open:hover .arw {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 10.5px;
   letter-spacing: 0.16em;
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .trade .sno {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1888,10 +1898,10 @@ a.wb-open:hover .arw {
   font-size: 11.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .work-index .idx-head .count b {
-  color: var(--accent);
+  color: var(--red-deep);
   font-weight: 600;
 }
 
@@ -1915,7 +1925,7 @@ a.wb-open:hover .arw {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
   letter-spacing: 0.16em;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .standards .std h3 {
   font-family: var(--font-display), Georgia, serif;
@@ -1951,7 +1961,7 @@ a.wb-open:hover .arw {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-weight: 600;
   font-size: 22px;
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .next-steps .step h4 {
   font-family: var(--font-display), Georgia, serif;
@@ -2002,13 +2012,13 @@ a.wb-open:hover .arw {
   transition: color 0.2s;
 }
 .crumb .path a:hover {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .crumb .path .arw {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .crumb .path .sep {
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .crumb .path .here {
   color: var(--ink);
@@ -2021,7 +2031,7 @@ a.wb-open:hover .arw {
   font-size: 11.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--red-deep);
   white-space: nowrap;
 }
 
@@ -2050,7 +2060,7 @@ a.wb-open:hover .arw {
 }
 .pj-title .em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .pj-summary {
   font-size: clamp(17px, 1.5vw, 20px);
@@ -2081,7 +2091,7 @@ a.wb-open:hover .arw {
   font-size: 9.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .titlestrip .cell .v {
   font-family: var(--font-display), Georgia, serif;
@@ -2092,7 +2102,7 @@ a.wb-open:hover .arw {
   line-height: 1.1;
 }
 .titlestrip .cell .v.accent {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .titlestrip .cell .v.ok {
   color: var(--blue);
@@ -2128,7 +2138,7 @@ a.wb-open:hover .arw {
   color: var(--ink-2);
 }
 .pj-fig-cap .lbl b {
-  color: var(--accent);
+  color: var(--red-deep);
   font-weight: 600;
 }
 .pj-fig-cap .fig {
@@ -2136,7 +2146,7 @@ a.wb-open:hover .arw {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 
 /* brief + scope */
@@ -2171,7 +2181,7 @@ a.wb-open:hover .arw {
   font-size: 11.5px;
   line-height: 1.7;
   letter-spacing: 0.02em;
-  color: var(--ink-3);
+  color: var(--ink-2);
   margin-top: 18px;
   max-width: 22ch;
 }
@@ -2201,7 +2211,7 @@ a.wb-open:hover .arw {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
   padding: 16px 0 8px;
 }
 .scope-list ul {
@@ -2281,7 +2291,7 @@ a.wb-open:hover .arw {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-weight: 600;
   font-size: 24px;
-  color: var(--accent);
+  color: var(--red-deep);
   letter-spacing: 0.02em;
 }
 .phase .ph-no .marktick {
@@ -2305,7 +2315,7 @@ a.wb-open:hover .arw {
   font-size: 10.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
   margin-bottom: 14px;
 }
 .phase .ph-body .ph-dur b {
@@ -2388,7 +2398,7 @@ a.wb-open:hover .arw {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
   border: 1px solid var(--hair);
   padding: 4px 8px;
 }
@@ -2396,7 +2406,7 @@ a.wb-open:hover .arw {
   color: var(--blue);
 }
 .gal-cell .cap .badge.after {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .gal-grid.thirds {
   grid-template-columns: repeat(3, 1fr);
@@ -2507,7 +2517,7 @@ a.wb-open:hover .arw {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-2);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -2520,7 +2530,7 @@ a.wb-open:hover .arw {
   line-height: 1.08;
 }
 .pj-next .navcard .arw {
-  color: var(--accent);
+  color: var(--red-deep);
 }
 .pj-next .navcard.cta {
   background: var(--ink);
