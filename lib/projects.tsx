@@ -18,9 +18,9 @@ export interface Project {
   slug: string;
   sheetNo: string;
   title: string;
-  titleHtml: string;
+  titleNode: React.ReactNode;
   summary: string;
-  summaryHtml: string;
+  summaryNode: React.ReactNode;
   scope: string;
   location: string;
   duration: string;
@@ -45,9 +45,9 @@ export const projects: Project[] = [
     slug: 'kitchen-remodel',
     sheetNo: 'PRJ‑01',
     title: 'Full Kitchen & Main-Floor Remodel',
-    titleHtml: 'Full Kitchen &amp;<br /><em class="em">Main-Floor</em> Remodel',
+    titleNode: <>Full Kitchen &amp;<br /><em className="em">Main-Floor</em> Remodel</>,
     summary: 'A dated, closed-off 1920s main floor opened into one bright, working kitchen-and-living space — new layout, new systems, same good bones.',
-    summaryHtml: 'A dated, closed-off 1920s main floor opened into one bright, working kitchen-and-living space — <span class="em">new layout, new systems, same good bones.</span>',
+    summaryNode: <>A dated, closed-off 1920s main floor opened into one bright, working kitchen-and-living space — <span className="em">new layout, new systems, same good bones.</span></>,
     scope: 'Whole-Home Interior',
     location: 'North Minneapolis',
     duration: '≈ 9 Weeks',
@@ -100,9 +100,9 @@ export const projects: Project[] = [
     slug: 'roof-tearoff',
     sheetNo: 'PRJ‑02',
     title: 'Asphalt Roof Tear-Off & Replacement',
-    titleHtml: 'Asphalt Roof<br /><em class="em">Tear-Off</em> &amp; Replacement',
+    titleNode: <>Asphalt Roof<br /><em className="em">Tear-Off</em> &amp; Replacement</>,
     summary: 'An aging, leak-prone roof stripped to the deck and rebuilt the right way — down to bare wood, back up to a tight, warrantied shingle system.',
-    summaryHtml: 'An aging, leak-prone roof stripped to the deck and rebuilt the right way — <span class="em">down to bare wood, back up to a tight, warrantied shingle system.</span>',
+    summaryNode: <>An aging, leak-prone roof stripped to the deck and rebuilt the right way — <span className="em">down to bare wood, back up to a tight, warrantied shingle system.</span></>,
     scope: 'Exterior · Roofing',
     location: 'Camden',
     duration: '≈ 3 Days',
