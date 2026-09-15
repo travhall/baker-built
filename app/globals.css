@@ -385,19 +385,21 @@ h4 {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0;
+  width: 100%;
   height: 1.5px;
   background: var(--accent);
-  transition: width 0.25s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 .nav-links a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 .nav-links a[aria-current="page"] {
   color: var(--accent);
 }
 .nav-links a[aria-current="page"]::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 .nav-cta {
   display: flex;
@@ -440,11 +442,11 @@ h4 {
 }
 .nav.nav-centered .nav-links a::after {
   left: 24px;
-  width: 0;
+  width: calc(100% - 48px);
 }
 .nav.nav-centered .nav-links a:hover::after,
 .nav.nav-centered .nav-links a[aria-current="page"]::after {
-  width: calc(100% - 48px);
+  transform: scaleX(1);
 }
 .nav.nav-centered .nav-cta .btn {
   display: none;
@@ -470,10 +472,13 @@ h4 {
 /* ---- hamburger button ---- */
 .nav-hamburger {
   display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
   margin-left: 4px;
   color: var(--ink);
   -webkit-tap-highlight-color: transparent;
@@ -2653,7 +2658,6 @@ a.wb-open:hover .arw {
   }
   .nav-hamburger {
     display: flex;
-    align-items: center;
   }
   .spec-grid {
     grid-template-columns: 1fr 1fr;
