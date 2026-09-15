@@ -23,7 +23,8 @@ export default function Footer() {
             <Link href="/services#svc-02">Roofing</Link>
             <Link href="/services#svc-03">Window Replacement</Link>
             <Link href="/services#svc-04">Decking</Link>
-            <Link href="/services#svc-05">New Builds &amp; Additions</Link>
+            <Link href="/services#svc-05">New Builds</Link>
+            <Link href="/services#svc-06">Additions</Link>
           </div>
 
           <div className="col">
