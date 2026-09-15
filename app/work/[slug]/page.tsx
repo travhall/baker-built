@@ -45,9 +45,9 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
           <div className="pj-mast-top">
             <div>
               <div className="marker reveal"><b>{project.sheetNo}</b> / Project Record</div>
-              <h1 className="pj-title reveal d1" dangerouslySetInnerHTML={{ __html: project.titleHtml }} />
+              <h1 className="pj-title reveal d1">{project.titleNode}</h1>
             </div>
-            <p className="pj-summary reveal d2" dangerouslySetInnerHTML={{ __html: project.summaryHtml }} />
+            <p className="pj-summary reveal d2">{project.summaryNode}</p>
           </div>
           <div className="titlestrip reveal d1">
             <div className="cell"><div className="k">Project No.</div><div className="v accent">{project.sheetNo}</div></div>
