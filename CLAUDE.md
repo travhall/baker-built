@@ -21,12 +21,6 @@ pnpm build
 No test runner exists yet, so there is no `pnpm test`. Verification is
 typecheck + lint + build, plus a manual browser check for anything visual.
 
-**`pnpm lint` is currently broken** — `eslint-plugin-react@7.37.5` crashes
-on the pinned `eslint@10.7.0` (`context.getFilename is not a function`), an
-upstream dependency version mismatch, not a config issue. Don't try to fix
-it as a side effect of unrelated work; treat `pnpm typecheck` + `pnpm build`
-as the working verification pair until it's resolved separately.
-
 ## Static export
 
 `next.config.js` sets `output: 'export'` — this is the single most
