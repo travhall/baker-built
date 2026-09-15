@@ -1,28 +1,66 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
+
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+}
 
 export default function EstimateForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('submitting');
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form) as any) as Record<string, string>;
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode(data),
+      });
+      if (!res.ok) throw new Error(`Netlify Forms responded ${res.status}`);
+      setStatus('success');
+      form.reset();
+    } catch {
+      setStatus('error');
+    }
+  }
 
   return (
     <form
       className="form-side"
-      onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+      name="estimate"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
     >
+      <input type="hidden" name="form-name" value="estimate" />
+      <p style={{ display: 'none' }}>
+        <label>
+          Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+        </label>
+      </p>
+
       <div className="form-head">
         <div className="ttl">Work Order Request</div>
         <div className="wo"><div className="k">Form</div><div className="v">EST‑01</div></div>
       </div>
       <div className="field row2">
-        <div><label>Name</label><input type="text" name="name" placeholder="Your name" required /></div>
-        <div><label>Phone</label><input type="tel" name="phone" placeholder="(612) 000‑0000" required /></div>
+        <div><label htmlFor="est-name">Name</label><input id="est-name" type="text" name="name" placeholder="Your name" required /></div>
+        <div><label htmlFor="est-phone">Phone</label><input id="est-phone" type="tel" name="phone" placeholder="(612) 000‑0000" required /></div>
       </div>
-      <div className="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com" /></div>
-      <div className="field"><label>Project Address</label><input type="text" name="address" placeholder="Street, city, ZIP" /></div>
+      <div className="field"><label htmlFor="est-email">Email</label><input id="est-email" type="email" name="email" placeholder="you@email.com" /></div>
+      <div className="field"><label htmlFor="est-address">Project Address</label><input id="est-address" type="text" name="address" placeholder="Street, city, ZIP" /></div>
       <div className="field">
-        <label>Project Type</label>
-        <select name="type" required defaultValue="">
+        <label htmlFor="est-type">Project Type</label>
+        <select id="est-type" name="type" required defaultValue="">
           <option value="" disabled>Select a scope…</option>
           <option>Home Remodeling</option>
           <option>Roofing</option>
@@ -34,16 +72,26 @@ export default function EstimateForm() {
         </select>
       </div>
       <div className="field">
-        <label>Brief Description</label>
-        <textarea name="desc" placeholder="What are you looking to build, repair, or replace? Rough timeline if you have one."></textarea>
+        <label htmlFor="est-desc">Brief Description</label>
+        <textarea id="est-desc" name="desc" placeholder="What are you looking to build, repair, or replace? Rough timeline if you have one."></textarea>
       </div>
-      <button className="btn btn-accent" type="submit" style={{width:'100%',justifyContent:'center'}}>
-        Submit Request <span className="arw">→</span>
+      <button
+        className="btn btn-accent"
+        type="submit"
+        disabled={status === 'submitting'}
+        style={{ width: '100%', justifyContent: 'center' }}
+      >
+        {status === 'submitting' ? 'Sending…' : 'Submit Request'} <span className="arw">→</span>
       </button>
       <div className="form-note">Or call direct: (612) 964‑3505 · Mon–Fri 8AM–5PM</div>
-      {submitted && (
+      {status === 'success' && (
         <div style={{marginTop:'18px',padding:'14px 16px',background:'rgba(60,90,115,0.08)',border:'1px solid var(--hair)',fontFamily:'var(--font-mono)',fontSize:'12px',letterSpacing:'0.04em',color:'var(--blue)',display:'flex',alignItems:'center',gap:'10px'}}>
           ✓ REQUEST LOGGED — Nate will reach out within one business day.
+        </div>
+      )}
+      {status === 'error' && (
+        <div style={{marginTop:'18px',padding:'14px 16px',background:'rgba(236,59,48,0.08)',border:'1px solid var(--hair)',fontFamily:'var(--font-mono)',fontSize:'12px',letterSpacing:'0.04em',color:'var(--red-deep)',display:'flex',alignItems:'center',gap:'10px'}}>
+          ✕ Something went wrong. Please call (612) 964‑3505 directly.
         </div>
       )}
     </form>
