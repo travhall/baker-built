@@ -19,18 +19,10 @@ export default function Work() {
         <div className="wrap">
           <div className="pj-mast-top">
             <div>
-              <div className="marker reveal"><b>WRK</b> / Selected Work</div>
-              <h1 className="pj-title reveal d1">Projects from<br />the <em className="em">field</em>.</h1>
+              <div className="marker"><b>WRK</b> / Selected Work</div>
+              <h1 className="pj-title">Projects from<br />the <em className="em">field</em>.</h1>
             </div>
-            <p className="pj-summary reveal d2">A working record of recent projects across the Twin Cities. <span className="em">Photography is added as jobs wrap</span> — open any sheet to see the full story.</p>
-          </div>
-          <div className="titlestrip reveal d1">
-            <div className="cell"><div className="k">Sheet</div><div className="v accent">WRK</div></div>
-            <div className="cell"><div className="k">On Record</div><div className="v">6 Projects</div></div>
-            <div className="cell"><div className="k">Detail Sheets</div><div className="v ok">2 Live</div></div>
-            <div className="cell"><div className="k">Area</div><div className="v">Twin Cities</div></div>
-            <div className="cell"><div className="k">Scopes</div><div className="v">All Trades</div></div>
-            <div className="cell"><div className="k">Status</div><div className="v">Adding More</div></div>
+            <p className="pj-summary">A working record of recent projects across the Twin Cities. <span className="em">Photography is added as jobs wrap</span> — open any sheet to see the full story.</p>
           </div>
         </div>
       </section>

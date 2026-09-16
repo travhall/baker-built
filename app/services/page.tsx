@@ -20,18 +20,10 @@ export default function Services() {
         <div className="wrap">
           <div className="pj-mast-top">
             <div>
-              <div className="marker reveal"><b>SVC</b> / Services</div>
-              <h1 className="pj-title reveal d1">What we build<br />&amp; <em className="em">restore</em>.</h1>
+              <div className="marker"><b>SVC</b> / Services</div>
+              <h1 className="pj-title">What we build<br />&amp; <em className="em">restore</em>.</h1>
             </div>
-            <p className="pj-summary reveal d2">A full-service residential scope — from a single window to a whole new structure. <span className="em">Every job planned, permitted where required, and warrantied.</span></p>
-          </div>
-          <div className="titlestrip reveal d1">
-            <div className="cell"><div className="k">Sheet</div><div className="v accent">SVC</div></div>
-            <div className="cell"><div className="k">Trades</div><div className="v">Six</div></div>
-            <div className="cell"><div className="k">Service Area</div><div className="v">Twin Cities</div></div>
-            <div className="cell"><div className="k">Estimates</div><div className="v">Free</div></div>
-            <div className="cell"><div className="k">Languages</div><div className="v">EN · ES</div></div>
-            <div className="cell"><div className="k">Status</div><div className="v ok">Booking</div></div>
+            <p className="pj-summary">A full-service residential scope — from a single window to a whole new structure. <span className="em">Every job planned, permitted where required, and warrantied.</span></p>
           </div>
         </div>
       </section>

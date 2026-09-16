@@ -20,47 +20,20 @@ export default function About() {
         <div className="wrap">
           <div className="pj-mast-top">
             <div>
-              <div className="marker reveal">
+              <div className="marker">
                 <b>ABT</b> / About
               </div>
-              <h1 className="pj-title reveal d1">
+              <h1 className="pj-title">
                 Nate Baker <em className="em">is</em>
                 <br />
                 Baker Built.
               </h1>
             </div>
-            <p className="pj-summary reveal d2">
+            <p className="pj-summary">
               One contact. One person accountable.{" "}
               <span className="em">No job passed down a chain</span> — from the
               first measurement to the final walk-through.
             </p>
-          </div>
-
-          <div className="titlestrip reveal d1">
-            <div className="cell">
-              <div className="k">Owner</div>
-              <div className="v accent">Nate Baker</div>
-            </div>
-            <div className="cell">
-              <div className="k">Role</div>
-              <div className="v">Owner · Operator</div>
-            </div>
-            <div className="cell">
-              <div className="k">Experience</div>
-              <div className="v">20+ Years</div>
-            </div>
-            <div className="cell">
-              <div className="k">LLC Since</div>
-              <div className="v">2017</div>
-            </div>
-            <div className="cell">
-              <div className="k">BuildZoom</div>
-              <div className="v ok">Score 95</div>
-            </div>
-            <div className="cell">
-              <div className="k">Languages</div>
-              <div className="v">EN · ES</div>
-            </div>
           </div>
         </div>
       </section>

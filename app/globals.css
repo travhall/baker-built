@@ -1608,7 +1608,7 @@ a.wb-open:hover .arw {
 
 /* mast-center variant: applied directly on .pj-masthead element */
 .pj-masthead.mast-center {
-  padding: 90px 0 76px;
+  padding: 64px 0 48px;
 }
 .pj-masthead.mast-center .titlestrip {
   display: none;
@@ -1648,7 +1648,7 @@ a.wb-open:hover .arw {
   position: relative;
   height: 1px;
   width: min(100%, 760px);
-  margin: 54px auto 0;
+  margin: 32px auto 0;
   background: var(--hair);
 }
 .pj-masthead.mast-center .wrap {
