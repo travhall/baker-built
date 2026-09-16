@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type SubmitEvent } from 'react';
+import { useEffect, useRef, useState, type SubmitEvent } from 'react';
 
 function encode(data: Record<string, string>) {
   return Object.keys(data)
@@ -10,6 +10,14 @@ function encode(data: Record<string, string>) {
 
 export default function EstimateForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const statusRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if ((status === 'success' || status === 'error') && statusRef.current) {
+      statusRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      statusRef.current.focus();
+    }
+  }, [status]);
 
   async function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,6 +25,7 @@ export default function EstimateForm() {
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form) as any) as Record<string, string>;
+    data.subject = `New Estimate Request — ${data.type} — ${data.name}`;
 
     try {
       const res = await fetch('/', {
@@ -42,6 +51,7 @@ export default function EstimateForm() {
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value="estimate" />
+      <input type="hidden" name="subject" value="New Estimate Request" />
       <p style={{ display: 'none' }}>
         <label>
           Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
@@ -85,12 +95,24 @@ export default function EstimateForm() {
       </button>
       <div className="form-note">Or call direct: (612) 964‑3505 · Mon–Fri 8AM–5PM</div>
       {status === 'success' && (
-        <div style={{marginTop:'18px',padding:'14px 16px',background:'rgba(60,90,115,0.08)',border:'1px solid var(--hair)',fontFamily:'var(--font-mono)',fontSize:'12px',letterSpacing:'0.04em',color:'var(--blue)',display:'flex',alignItems:'center',gap:'10px'}}>
+        <div
+          ref={statusRef}
+          tabIndex={-1}
+          role="status"
+          aria-live="polite"
+          style={{marginTop:'18px',padding:'20px 22px',background:'rgba(60,90,115,0.08)',border:'1px solid var(--hair)',fontFamily:'var(--font-mono)',fontSize:'14px',letterSpacing:'0.04em',color:'var(--blue)',display:'flex',alignItems:'center',gap:'10px'}}
+        >
           ✓ REQUEST LOGGED — Nate will reach out within one business day.
         </div>
       )}
       {status === 'error' && (
-        <div style={{marginTop:'18px',padding:'14px 16px',background:'rgba(236,59,48,0.08)',border:'1px solid var(--hair)',fontFamily:'var(--font-mono)',fontSize:'12px',letterSpacing:'0.04em',color:'var(--red-deep)',display:'flex',alignItems:'center',gap:'10px'}}>
+        <div
+          ref={statusRef}
+          tabIndex={-1}
+          role="status"
+          aria-live="polite"
+          style={{marginTop:'18px',padding:'20px 22px',background:'rgba(236,59,48,0.08)',border:'1px solid var(--hair)',fontFamily:'var(--font-mono)',fontSize:'14px',letterSpacing:'0.04em',color:'var(--red-deep)',display:'flex',alignItems:'center',gap:'10px'}}
+        >
           ✕ Something went wrong. Please call (612) 964‑3505 directly.
         </div>
       )}
