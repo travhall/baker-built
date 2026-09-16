@@ -14,53 +14,23 @@ export const metadata: Metadata = {
 export default function Estimate() {
   return (
     <>
-      {/* ===== MASTHEAD ===== */}
-      <section className="pj-masthead mast-center gridbg">
+      {/* ===== HEADER ===== */}
+      <section className="section gridbg" style={{ padding: "56px 0 0" }}>
         <div className="wrap">
-          <div className="pj-mast-top">
-            <div>
-              <div className="marker reveal">
-                <b>EST</b> / Request an Estimate
-              </div>
-              <h1 className="pj-title reveal d1">
-                Tell us about your project. The{" "}
-                <em className="em">estimate&apos;s free</em>.
-              </h1>
-            </div>
-            <p className="pj-summary reveal d2">
-              Fill out the work-order request below or call direct.{" "}
-              <span className="em">
-                You&apos;ll hear back within one business day
-              </span>{" "}
-              — from the person who&apos;ll actually do the work.
-            </p>
+          <div className="marker">
+            <b>EST</b> / Request an Estimate
           </div>
-          <div className="titlestrip reveal d1">
-            <div className="cell">
-              <div className="k">Form</div>
-              <div className="v accent">EST‑01</div>
-            </div>
-            <div className="cell">
-              <div className="k">Cost</div>
-              <div className="v">No Charge</div>
-            </div>
-            <div className="cell">
-              <div className="k">Response</div>
-              <div className="v ok">1 Business Day</div>
-            </div>
-            <div className="cell">
-              <div className="k">Hours</div>
-              <div className="v">Mon–Fri 8–5</div>
-            </div>
-            <div className="cell">
-              <div className="k">Area</div>
-              <div className="v">Twin Cities</div>
-            </div>
-            <div className="cell">
-              <div className="k">Languages</div>
-              <div className="v">EN · ES</div>
-            </div>
-          </div>
+          <h1 className="h-section" style={{ maxWidth: "20ch" }}>
+            Tell us about your project.{" "}
+            <em className="em">The estimate&apos;s free.</em>
+          </h1>
+          <p className="lede" style={{ marginTop: "14px" }}>
+            Fill out the work-order request below or call direct.{" "}
+            <span className="em">
+              You&apos;ll hear back within one business day
+            </span>{" "}
+            — from the person who&apos;ll actually do the work.
+          </p>
         </div>
       </section>
 
@@ -68,7 +38,7 @@ export default function Estimate() {
       <section
         className="section contact"
         id="work-order"
-        style={{ paddingTop: "64px" }}
+        style={{ paddingTop: "32px" }}
       >
         <div className="wrap">
           <div className="estimate-card reveal d1">
