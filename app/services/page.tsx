@@ -29,16 +29,16 @@ export default function Services() {
       </section>
 
       {/* ===== SCOPE INDEX ===== */}
-      <section className="section" style={{padding:'64px 0 0'}}>
+      <section className="section svc-index">
         <div className="wrap">
           <div className="marker reveal">Scope Index / Jump to a trade</div>
-          <div className="spec-grid reveal d1" style={{marginTop:'8px'}}>
+          <div className="spec-grid reveal d1">
             {services.map(({ id, no, title, tags, icon }) => (
-              <a className="spec" href={`#${id}`} key={id} style={{textDecoration:'none'}}>
+              <a className="spec" href={`#${id}`} key={id}>
                 <span className="corner"></span>
                 <div className="sno">{no}</div>
                 <div className="sicon">{icon}</div>
-                <h3 style={{fontSize:'21px'}}>{title}</h3>
+                <h3>{title}</h3>
                 <div className="tags">{tags.slice(0,3).map(t => <span key={t}>{t}</span>)}</div>
               </a>
             ))}
@@ -47,7 +47,7 @@ export default function Services() {
       </section>
 
       {/* ===== TRADE ROWS ===== */}
-      <section className="section" style={{padding:'40px 0 90px'}}>
+      <section className="section svc-trades">
         <div className="wrap">
           <div className="trade-list">
             {services.map(({ id, no, label, title, fullDesc, incl, tags, imgLabel }) => (

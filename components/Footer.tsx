@@ -12,7 +12,6 @@ export default function Footer() {
               alt="Baker Built Construction"
               width={480}
               height={480}
-              style={{ height: "80px", width: "auto", marginBottom: "20px" }}
             />
             <div className="tag">Take your dream and make it a reality.</div>
           </div>

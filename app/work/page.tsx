@@ -28,13 +28,13 @@ export default function Work() {
       </section>
 
       {/* ===== PROJECT GRID ===== */}
-      <section className="section work-index" style={{paddingTop:'64px'}}>
+      <section className="section work-index">
         <div className="wrap">
           <div className="idx-head reveal">
-            <div className="marker" style={{marginBottom:0}}>Project Index</div>
+            <div className="marker">Project Index</div>
             <div className="count"><b>02</b> sheets live · 04 in progress</div>
           </div>
-          <div className="work-grid reveal d1" style={{marginTop:'26px'}}>
+          <div className="work-grid reveal d1">
             {workCards.map((card) => (
               <WorkCard key={card.sheet} {...card} />
             ))}

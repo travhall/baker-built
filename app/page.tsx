@@ -143,7 +143,7 @@ export default function Home() {
             </div>
             <h2 className="h-section reveal">
               Nate Baker{" "}
-              <span style={{ fontStyle: "italic", fontWeight: 400 }}>is</span>{" "}
+              <span>is</span>{" "}
               Baker Built.
             </h2>
             <p className="reveal d1">
@@ -181,11 +181,7 @@ export default function Home() {
               &ldquo;No job too large or too small.&rdquo;
               <span className="sub">— Nate Baker, Minneapolis MN</span>
             </div>
-            <Link
-              className="gateway reveal d2"
-              href="/about"
-              style={{ marginTop: "30px" }}
-            >
+            <Link className="gateway reveal d2" href="/about">
               More About Baker Built <span className="arw">→</span>
             </Link>
           </div>
@@ -219,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* ===== PROOF ===== */}
-      <ProofRecord markerNumber="04" padding="104px 0" />
+      <ProofRecord markerNumber="04" size="lg" />
 
       {/* ===== CTA BAND ===== */}
       <div id="estimate">

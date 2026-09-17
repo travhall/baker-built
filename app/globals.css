@@ -931,11 +931,21 @@ h4 {
   border: 1px solid var(--hair);
   background: var(--paper-card);
 }
+.svc-index {
+  padding: 64px 0 0;
+}
+.svc-index .spec-grid {
+  margin-top: 8px;
+}
+.svc-trades {
+  padding: 40px 0 90px;
+}
 .spec {
   padding: 34px 30px 30px;
   border-right: 1px solid var(--hair);
   border-bottom: 1px solid var(--hair);
   position: relative;
+  text-decoration: none;
   transition: background 0.25s ease;
 }
 .spec-grid .spec:nth-child(3n) {
@@ -963,7 +973,7 @@ h4 {
   display: block;
 }
 .spec h3 {
-  font-size: 25px;
+  font-size: 21px;
   margin-bottom: 10px;
 }
 .spec p {
@@ -1016,6 +1026,13 @@ h4 {
 }
 .about .copy h2 {
   margin-bottom: 22px;
+}
+.about .copy h2 span {
+  font-style: italic;
+  font-weight: 400;
+}
+.about.about-story {
+  border-top: 0;
 }
 .about .copy p {
   color: var(--ink-2);
@@ -1122,6 +1139,15 @@ img.pj-fig-slot {
   line-height: 1.5;
 }
 
+.section.work-index {
+  padding-top: 64px;
+}
+.work-index .marker {
+  margin-bottom: 0;
+}
+.work-index .work-grid {
+  margin-top: 26px;
+}
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1286,6 +1312,13 @@ a.wb-open:hover .arw {
 }
 .proof h2 {
   color: var(--paper);
+  max-width: 18ch;
+}
+.proof-lg {
+  padding: 104px 0;
+}
+.proof-sm {
+  padding: 96px 0;
 }
 .stat-row {
   display: grid;
@@ -1357,6 +1390,9 @@ a.wb-open:hover .arw {
   color: rgba(244, 239, 227, 0.5);
   font-style: italic;
   font-size: 18px;
+}
+.quote.empty .qm {
+  color: rgba(244, 239, 227, 0.55);
 }
 .quote .by {
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -1460,6 +1496,32 @@ a.wb-open:hover .arw {
   color: var(--ink-2);
   margin-top: 16px;
 }
+.hp {
+  display: none;
+}
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+.status-banner {
+  margin-top: 18px;
+  padding: 20px 22px;
+  border: 1px solid var(--hair);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.status-banner--success {
+  background: rgba(60, 90, 115, 0.08);
+  color: var(--blue);
+}
+.status-banner--error {
+  background: rgba(236, 59, 48, 0.08);
+  color: var(--red-deep);
+}
 
 .info-side {
   padding: 46px 40px;
@@ -1524,6 +1586,7 @@ a.wb-open:hover .arw {
 }
 .footer .brand-f img {
   height: 80px;
+  width: auto;
   margin-bottom: 20px;
 }
 .footer .tag {
@@ -1636,6 +1699,44 @@ a.wb-open:hover .arw {
   height: 1px;
   background: var(--accent);
 }
+.nf-header {
+  text-align: center;
+}
+.nf-header .marker {
+  justify-content: center;
+}
+.nf-header h1 {
+  max-width: 20ch;
+  margin: 0 auto 24px;
+}
+.nf-header .lede {
+  margin: 0 auto 36px;
+}
+.nf-header .actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.est-header {
+  padding: 56px 0 0;
+  text-align: center;
+}
+.est-header h1 {
+  max-width: 20ch;
+  margin: 0 auto;
+}
+.est-header p {
+  margin: 14px auto 0;
+}
+.section.contact {
+  padding-top: 32px;
+}
+.next-steps-block {
+  margin-top: 54px;
+}
+
 .pj-masthead.mast-center .pj-title {
   max-width: 20ch;
   margin: 0 auto;
@@ -1751,6 +1852,7 @@ a.wb-open:hover .arw {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  margin-top: 30px;
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -1916,6 +2018,11 @@ a.wb-open:hover .arw {
 .work-index .idx-head .count b {
   color: var(--red-deep);
   font-weight: 600;
+}
+
+.how-we-work h2 {
+  margin-bottom: 30px;
+  max-width: 20ch;
 }
 
 /* about standards */
@@ -2423,6 +2530,13 @@ a.wb-open:hover .arw {
 }
 .gal-grid.thirds {
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 24px;
+}
+.pj-build .section-head {
+  margin-bottom: 30px;
+}
+.pj-outcome .section {
+  padding: 96px 0;
 }
 
 /* outcome */

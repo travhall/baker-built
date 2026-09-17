@@ -15,22 +15,16 @@ export default function Estimate() {
   return (
     <>
       {/* ===== HEADER ===== */}
-      <section
-        className="section gridbg"
-        style={{ padding: "56px 0 0", textAlign: "center" }}
-      >
+      <section className="section gridbg est-header">
         <div className="wrap">
           <div className="marker">
             <b>EST</b> / Request an Estimate
           </div>
-          <h1
-            className="h-section"
-            style={{ maxWidth: "20ch", margin: "0 auto" }}
-          >
+          <h1 className="h-section">
             Tell us about your project. The estimate&apos;s{" "}
             <em className="em">free</em>.
           </h1>
-          <p className="lede" style={{ margin: "14px auto 0" }}>
+          <p className="lede">
             Fill out the work-order request below or call direct.{" "}
             <span className="em">
               You&apos;ll hear back within one business day
@@ -41,11 +35,7 @@ export default function Estimate() {
       </section>
 
       {/* ===== ESTIMATE CARD ===== */}
-      <section
-        className="section contact"
-        id="work-order"
-        style={{ paddingTop: "32px" }}
-      >
+      <section className="section contact" id="work-order">
         <div className="wrap">
           <div className="estimate-card reveal d1">
             <EstimateForm />
@@ -81,7 +71,7 @@ export default function Estimate() {
           </div>
 
           {/* WHAT HAPPENS NEXT */}
-          <div style={{ marginTop: "54px" }}>
+          <div className="next-steps-block">
             <div className="marker reveal">What Happens Next / The Process</div>
             <div className="next-steps reveal d1">
               <div className="step">

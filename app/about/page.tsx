@@ -39,12 +39,12 @@ export default function About() {
       </section>
 
       {/* ===== STORY ===== */}
-      <section className="section about" style={{ borderTop: 0 }}>
+      <section className="section about about-story">
         <div className="wrap">
           <AboutPortrait />
           <div className="copy">
             <div className="marker reveal">The Person Behind the Work</div>
-            <h2 className="h-section reveal" style={{ marginBottom: "22px" }}>
+            <h2 className="h-section reveal">
               Twenty years on Minneapolis homes.
             </h2>
             <p className="reveal d1">
@@ -93,13 +93,10 @@ export default function About() {
       </section>
 
       {/* ===== HOW WE WORK ===== */}
-      <section className="section">
+      <section className="section how-we-work">
         <div className="wrap">
           <div className="marker reveal">How We Work / The Standard</div>
-          <h2
-            className="h-section reveal"
-            style={{ marginBottom: "30px", maxWidth: "20ch" }}
-          >
+          <h2 className="h-section reveal">
             Three things that don&apos;t change, job to job.
           </h2>
           <div className="standards reveal d1">
@@ -135,7 +132,7 @@ export default function About() {
       </section>
 
       {/* ===== THE RECORD ===== */}
-      <ProofRecord padding="96px 0" />
+      <ProofRecord size="sm" />
 
       {/* ===== CTA BAND ===== */}
       <CtaBand

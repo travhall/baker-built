@@ -57,7 +57,7 @@ export default function EstimateForm() {
     >
       <input type="hidden" name="form-name" value="estimate" />
       <input type="hidden" name="subject" value="New Estimate Request" />
-      <p style={{ display: "none" }}>
+      <p className="hp">
         <label>
           Don&apos;t fill this out if you&apos;re human:{" "}
           <input name="bot-field" />
@@ -135,10 +135,9 @@ export default function EstimateForm() {
         ></textarea>
       </div>
       <button
-        className="btn btn-accent"
+        className="btn btn-accent btn-block"
         type="submit"
         disabled={status === "submitting"}
-        style={{ width: "100%", justifyContent: "center" }}
       >
         {status === "submitting" ? "Sending…" : "Submit Request"}{" "}
         <span className="arw">→</span>
@@ -152,19 +151,7 @@ export default function EstimateForm() {
           tabIndex={-1}
           role="status"
           aria-live="polite"
-          style={{
-            marginTop: "18px",
-            padding: "20px 22px",
-            background: "rgba(60,90,115,0.08)",
-            border: "1px solid var(--hair)",
-            fontFamily: "var(--font-mono)",
-            fontSize: "14px",
-            letterSpacing: "0.04em",
-            color: "var(--blue)",
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-          }}
+          className="status-banner status-banner--success"
         >
           ✓ REQUEST LOGGED — Nate will reach out within one business day.
         </div>
@@ -175,19 +162,7 @@ export default function EstimateForm() {
           tabIndex={-1}
           role="status"
           aria-live="polite"
-          style={{
-            marginTop: "18px",
-            padding: "20px 22px",
-            background: "rgba(236,59,48,0.08)",
-            border: "1px solid var(--hair)",
-            fontFamily: "var(--font-mono)",
-            fontSize: "14px",
-            letterSpacing: "0.04em",
-            color: "var(--red-deep)",
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-          }}
+          className="status-banner status-banner--error"
         >
           ✕ Something went wrong. Please call (612) 964‑3505 directly.
         </div>

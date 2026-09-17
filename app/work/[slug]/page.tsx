@@ -151,7 +151,7 @@ export default async function ProjectDetail({
       {/* ===== BUILD SEQUENCE ===== */}
       <section className="section pj-build gridbg">
         <div className="wrap">
-          <div className="section-head" style={{ marginBottom: "30px" }}>
+          <div className="section-head">
             <div>
               <div className="marker reveal">
                 Build Sequence / How it came together
@@ -231,10 +231,7 @@ export default async function ProjectDetail({
               </div>
             ))}
           </div>
-          <div
-            className="gal-grid thirds reveal d1"
-            style={{ marginTop: "24px" }}
-          >
+          <div className="gal-grid thirds reveal d1">
             {project.details.map((cell) => (
               <div className="gal-cell plate ticks" key={cell.caption}>
                 <span className="tick tl"></span>
@@ -259,7 +256,7 @@ export default async function ProjectDetail({
       {/* ===== OUTCOME ===== */}
       <section className="pj-outcome">
         <div className="proof-tex">
-          <div className="section" style={{ padding: "96px 0" }}>
+          <div className="section">
             <div className="wrap">
               <div>
                 <div className="marker reveal">The Outcome</div>

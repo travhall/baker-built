@@ -50,7 +50,6 @@ export default function Navigation() {
               alt="Baker Built Construction logo"
               width={480}
               height={480}
-              style={{ height: '46px', width: 'auto' }}
               priority
             />
             <span className="bk">
