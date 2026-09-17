@@ -23,9 +23,12 @@ export default function Estimate() {
           <div className="marker">
             <b>EST</b> / Request an Estimate
           </div>
-          <h1 className="h-section" style={{ maxWidth: "20ch", margin: "0 auto" }}>
-            Tell us about your project.{" "}
-            <em className="em">The estimate&apos;s free.</em>
+          <h1
+            className="h-section"
+            style={{ maxWidth: "20ch", margin: "0 auto" }}
+          >
+            Tell us about your project. The estimate&apos;s{" "}
+            <em className="em">free</em>.
           </h1>
           <p className="lede" style={{ margin: "14px auto 0" }}>
             Fill out the work-order request below or call direct.{" "}

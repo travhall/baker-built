@@ -93,7 +93,7 @@ export default function About() {
       </section>
 
       {/* ===== HOW WE WORK ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section">
         <div className="wrap">
           <div className="marker reveal">How We Work / The Standard</div>
           <h2
