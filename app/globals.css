@@ -125,12 +125,14 @@ section {
 }
 
 /* mono label */
-.mono {
+:where(.mono, .marker) {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
-  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-2);
+}
+.mono {
+  letter-spacing: 0.16em;
 }
 .mono-red {
   color: var(--red-deep);
@@ -144,11 +146,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 12px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-2);
   margin-bottom: 26px;
 }
 .marker b {
