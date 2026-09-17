@@ -15,16 +15,19 @@ export default function Estimate() {
   return (
     <>
       {/* ===== HEADER ===== */}
-      <section className="section gridbg" style={{ padding: "56px 0 0" }}>
+      <section
+        className="section gridbg"
+        style={{ padding: "56px 0 0", textAlign: "center" }}
+      >
         <div className="wrap">
           <div className="marker">
             <b>EST</b> / Request an Estimate
           </div>
-          <h1 className="h-section" style={{ maxWidth: "20ch" }}>
+          <h1 className="h-section" style={{ maxWidth: "20ch", margin: "0 auto" }}>
             Tell us about your project.{" "}
             <em className="em">The estimate&apos;s free.</em>
           </h1>
-          <p className="lede" style={{ marginTop: "14px" }}>
+          <p className="lede" style={{ margin: "14px auto 0" }}>
             Fill out the work-order request below or call direct.{" "}
             <span className="em">
               You&apos;ll hear back within one business day
