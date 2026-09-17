@@ -256,7 +256,7 @@ h4 {
 .btn-accent {
   background: var(--accent-deep);
   border-color: var(--accent-deep);
-  color: #fff;
+  color: var(--paper);
 }
 .btn-accent:hover {
   background: var(--accent);
