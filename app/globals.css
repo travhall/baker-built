@@ -175,7 +175,7 @@ h4 {
 }
 
 .h-display {
-  font-size: clamp(46px, 7vw, 92px);
+  font-size: clamp(44px, 7vw, 88px);
   font-weight: 600;
   line-height: 0.98;
   letter-spacing: -0.02em;
@@ -870,7 +870,7 @@ h4 {
   max-width: var(--maxw);
   width: 100%;
   margin: 0 auto;
-  padding: clamp(40px, 6vh, 88px) 40px clamp(44px, 7vh, 84px);
+  padding: clamp(44px, 10vh, 88px) 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -2183,9 +2183,10 @@ a.wb-open:hover .arw {
   color: var(--red-deep);
 }
 .pj-summary {
-  font-size: clamp(17px, 1.5vw, 20px);
+  font-size: clamp(16px, 1.5vw, 19px);
   color: var(--ink-2);
   line-height: 1.55;
+  text-wrap: pretty;
 }
 .pj-summary .em {
   color: var(--ink);
@@ -2882,10 +2883,10 @@ a.wb-open:hover .arw {
   .nav-phone {
     display: none;
   }
-  .hero.hero-feature .hero-copy {
+  /* .hero.hero-feature .hero-copy {
     padding-left: 22px;
     padding-right: 22px;
-  }
+  } */
   .hero.hero-feature .wrap::after {
     inset: 12px;
   }
