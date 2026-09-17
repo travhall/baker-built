@@ -121,13 +121,6 @@ section {
   position: relative;
 }
 
-.rule {
-  border: 0;
-  height: 1px;
-  background: var(--hair);
-  margin: 0;
-}
-
 /* mono label */
 :where(.mono, .marker) {
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -741,39 +734,6 @@ h4 {
   color: var(--ink);
   margin-top: 3px;
 }
-.bp-line {
-  stroke: var(--blue);
-  stroke-width: 1.4;
-  fill: none;
-}
-.bp-thin {
-  stroke: var(--blue-soft);
-  stroke-width: 1;
-  fill: none;
-}
-.bp-dim {
-  stroke: var(--ink-3);
-  stroke-width: 1;
-  fill: none;
-}
-.bp-red {
-  stroke: var(--accent);
-  stroke-width: 1.6;
-  fill: none;
-}
-.bp-fill {
-  fill: color-mix(in srgb, var(--blue) 5%, transparent);
-}
-.bp-txt {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 11px;
-  fill: var(--ink-2);
-  letter-spacing: 0.08em;
-}
-.bp-txt-red {
-  fill: var(--accent);
-}
-
 /* ---- hero-feature variant (class applied on .hero element itself) ---- */
 .hero.hero-feature {
   padding: 0;
