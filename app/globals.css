@@ -43,6 +43,10 @@
   --accent-deep: var(--red-deep);
 
   --maxw: 1240px;
+
+  --text-outline: 1px 1px 0px #171717, -1px -1px 0px #171717,
+    0px 1px 0px #171717, 1px 0px 0px #171717, 0px -1px 0px #171717,
+    -1px 0px 0px #171717;
 }
 
 * {
@@ -178,13 +182,7 @@ h4 {
   line-height: 0.98;
   letter-spacing: -0.02em;
   text-wrap: balance;
-  text-shadow:
-    1px 1px 0px #171717,
-    -1px -1px 0px #171717,
-    0px 1px 0px #171717,
-    1px 0px 0px #171717,
-    0px -1px 0px #171717,
-    -1px 0px 0px #171717;
+  text-shadow: var(--text-outline);
 }
 .h-section {
   font-size: clamp(34px, 4.6vw, 60px);
@@ -648,13 +646,7 @@ h4 {
   align-items: center;
   gap: 14px;
   margin-bottom: 26px;
-  text-shadow:
-    1px 1px 0px #171717,
-    -1px -1px 0px #171717,
-    0px 1px 0px #171717,
-    1px 0px 0px #171717,
-    0px -1px 0px #171717,
-    -1px 0px 0px #171717;
+  text-shadow: var(--text-outline);
 }
 .hero-eyebrow .dot {
   width: 9px;
@@ -671,13 +663,7 @@ h4 {
 }
 .hero .lede {
   margin-bottom: 36px;
-  text-shadow:
-    1px 1px 0px #171717,
-    -1px -1px 0px #171717,
-    0px 1px 0px #171717,
-    1px 0px 0px #171717,
-    0px -1px 0px #171717,
-    -1px 0px 0px #171717;
+  text-shadow: var(--text-outline);
 }
 .hero-actions {
   display: flex;
@@ -691,13 +677,7 @@ h4 {
   margin-top: 44px;
   padding-top: 26px;
   border-top: 1px solid var(--hair);
-  text-shadow:
-    1px 1px 0px #171717,
-    -1px -1px 0px #171717,
-    0px 1px 0px #171717,
-    1px 0px 0px #171717,
-    0px -1px 0px #171717,
-    -1px 0px 0px #171717;
+  text-shadow: var(--text-outline);
 }
 .hero-meta .it .v {
   font-family: var(--font-display), Georgia, serif;
