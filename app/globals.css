@@ -1654,28 +1654,71 @@ a.wb-open:hover .arw {
 /* mast-center variant: applied directly on .pj-masthead element */
 .pj-masthead.mast-center {
   padding: 64px 0 48px;
-}
-.pj-masthead.mast-center .titlestrip {
-  display: none;
-}
-.pj-masthead.mast-center .pj-mast-top {
-  display: block;
-  text-align: center;
-  max-width: 1040px;
-  margin: 0 auto;
-  padding-bottom: 0;
-}
-.pj-masthead.mast-center .pj-mast-top > div {
-  display: contents;
-}
-.pj-masthead.mast-center .marker {
-  margin: 0 auto 30px;
-}
-.pj-masthead.mast-center .marker::after {
-  content: "";
-  width: 34px;
-  height: 1px;
-  background: var(--accent);
+
+  .titlestrip {
+    display: none;
+  }
+
+  .pj-mast-top {
+    display: block;
+    text-align: center;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-bottom: 0;
+
+    > div {
+      display: contents;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      height: 1px;
+      width: min(100%, 760px);
+      margin: 32px auto 0;
+      background: var(--hair);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -3.5px;
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      transform: translateX(-50%) rotate(45deg);
+      z-index: 1;
+    }
+  }
+
+  .marker {
+    margin: 0 auto 30px;
+
+    &::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+    }
+  }
+
+  .pj-title {
+    max-width: 20ch;
+    margin: 0 auto;
+    font-size: clamp(34px, 4.6vw, 60px);
+  }
+
+  .pj-summary {
+    max-width: 62ch;
+    margin: 30px auto 0;
+    font-size: clamp(18px, 1.6vw, 21px);
+  }
+
+  .wrap {
+    position: relative;
+  }
 }
 .nf-header {
   text-align: center;
@@ -1713,40 +1756,6 @@ a.wb-open:hover .arw {
 }
 .next-steps-block {
   margin-top: 54px;
-}
-
-.pj-masthead.mast-center .pj-title {
-  max-width: 20ch;
-  margin: 0 auto;
-  font-size: clamp(34px, 4.6vw, 60px);
-}
-.pj-masthead.mast-center .pj-summary {
-  max-width: 62ch;
-  margin: 30px auto 0;
-  font-size: clamp(18px, 1.6vw, 21px);
-}
-.pj-masthead.mast-center .pj-mast-top::after {
-  content: "";
-  display: block;
-  position: relative;
-  height: 1px;
-  width: min(100%, 760px);
-  margin: 32px auto 0;
-  background: var(--hair);
-}
-.pj-masthead.mast-center .wrap {
-  position: relative;
-}
-.pj-masthead.mast-center .pj-mast-top::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -3.5px;
-  width: 7px;
-  height: 7px;
-  background: var(--accent);
-  transform: translateX(-50%) rotate(45deg);
-  z-index: 1;
 }
 
 /* CTA band */
