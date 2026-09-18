@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
 
           <div className="col">
-            <h4>Services</h4>
+            <h3>Services</h3>
             <Link href="/services#svc-01">Home Remodeling</Link>
             <Link href="/services#svc-02">Roofing</Link>
             <Link href="/services#svc-03">Window Replacement</Link>
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           <div className="col">
-            <h4>Contact</h4>
+            <h3>Contact</h3>
             <a href="tel:+16129643505">(612) 964‑3505</a>
             <p>
               2636 Thomas Ave N<br />

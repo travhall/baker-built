@@ -1604,7 +1604,7 @@ img.pj-fig-slot {
   line-height: 1.25;
   text-wrap: balance;
 }
-.footer .col h4 {
+.footer .col h3 {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-weight: 500;
   font-size: 11px;
@@ -1634,7 +1634,7 @@ img.pj-fig-slot {
   gap: 14px;
 }
 .footer .bottom .mono {
-  color: color-mix(in srgb, var(--paper) 50%, transparent);
+  color: color-mix(in srgb, var(--paper) 55%, transparent);
   font-size: 11px;
 }
 

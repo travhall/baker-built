@@ -76,8 +76,8 @@ export default function Home() {
                   className="hero-slot"
                   src="/hero-cabin.jpg"
                   alt="Custom home built by Baker Built Construction"
-                  width={1800}
-                  height={1200}
+                  width={1200}
+                  height={800}
                   priority
                 />
               </div>
