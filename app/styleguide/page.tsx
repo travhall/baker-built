@@ -383,6 +383,7 @@ export default function StyleGuide() {
           </a>
         </div>
         <div
+          className="swatch-dark"
           style={{
             marginTop: "16px",
             display: "flex",

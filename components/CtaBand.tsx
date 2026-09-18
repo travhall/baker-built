@@ -3,16 +3,17 @@ import Link from 'next/link';
 interface Props {
   heading: string;
   body: string;
+  markerNumber?: string; // "05" on Home only; omitted on interior pages where the sequence doesn't apply
 }
 
-export default function CtaBand({ heading, body }: Props) {
+export default function CtaBand({ heading, body, markerNumber }: Props) {
   return (
     <section className="cta-band">
       <div className="proof-tex">
         <div className="wrap">
           <div className="inner">
             <div>
-              <div className="marker reveal"><b>05</b> / Request an Estimate</div>
+              <div className="marker reveal">{markerNumber ? <><b>{markerNumber}</b> / Request an Estimate</> : 'Request an Estimate'}</div>
               <h2 className="h-section reveal d1">{heading}</h2>
               <p className="lede reveal d1">{body}</p>
             </div>

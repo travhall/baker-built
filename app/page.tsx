@@ -220,6 +220,7 @@ export default function Home() {
       {/* ===== CTA BAND ===== */}
       <div id="estimate">
         <CtaBand
+          markerNumber="05"
           heading="Tell us about your project. The estimate's free."
           body="A free, no-pressure estimate from the person who'll actually do the work — fill out the work-order request or call direct."
         />

@@ -277,6 +277,14 @@ h4 {
 .btn:hover .arw {
   transform: translateX(4px);
 }
+/* Dark-surface contexts: the default ink-tinted shadow disappears against
+   an ink/ink-2 background, so these swap in a paper-tinted shadow instead. */
+.hero.hero-feature .hero-actions .btn:hover,
+.proof .btn:hover,
+.pj-outcome .btn:hover,
+.swatch-dark .btn:hover {
+  box-shadow: 4px 6px 0 color-mix(in srgb, var(--paper) 18%, transparent);
+}
 
 .btn-ghost {
   background: transparent;
@@ -1135,6 +1143,12 @@ img.pj-fig-slot {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-24);
 }
+.work-card-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
 .work-card .plate {
   display: flex;
   flex-direction: column;
@@ -1217,15 +1231,15 @@ img.pj-fig-slot {
     background var(--transition-fast),
     color var(--transition-fast);
 }
-a.wb-open:hover {
+.work-card:hover .wb-open:not(.pending) {
   background: var(--ink);
   color: var(--paper);
 }
-a.wb-open .arw {
+.wb-open .arw {
   color: var(--red-deep);
   transition: transform var(--transition-fast);
 }
-a.wb-open:hover .arw {
+.work-card:hover .wb-open:not(.pending) .arw {
   color: var(--paper);
   transform: translateX(4px);
 }
@@ -1764,8 +1778,8 @@ a.wb-open:hover .arw {
 
 /* CTA band */
 .cta-band {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper-2);
+  color: var(--ink);
 }
 .cta-band .proof-tex {
   position: relative;
@@ -1779,18 +1793,18 @@ a.wb-open:hover .arw {
   padding: var(--space-92) 0;
 }
 .cta-band .marker {
-  color: color-mix(in srgb, var(--paper) 60%, transparent);
+  color: var(--ink-2);
   margin-bottom: 22px;
 }
 .cta-band .marker b {
-  color: var(--accent-on-dark);
+  color: var(--red-deep);
 }
 .cta-band h2 {
-  color: var(--paper);
+  color: var(--ink);
   max-width: 18ch;
 }
 .cta-band .lede {
-  color: color-mix(in srgb, var(--paper) 82%, transparent);
+  color: var(--ink-2);
   margin-top: var(--space-20);
   max-width: 46ch;
 }
@@ -1805,7 +1819,7 @@ a.wb-open:hover .arw {
   padding: 18px 30px;
 }
 .cta-band .callbox {
-  border: 1px solid color-mix(in srgb, var(--paper) 20%, transparent);
+  border: 1px solid var(--hair);
   padding: var(--space-20) 22px;
   width: 100%;
 }
@@ -1814,13 +1828,13 @@ a.wb-open:hover .arw {
   font-size: 10.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--paper) 60%, transparent);
+  color: var(--ink-2);
 }
 .cta-band .callbox .v {
   font-family: var(--font-display), Georgia, serif;
   font-weight: 600;
   font-size: 28px;
-  color: var(--paper);
+  color: var(--ink);
   margin-top: var(--space-8);
 }
 .cta-band .callbox .v a {
@@ -1828,13 +1842,13 @@ a.wb-open:hover .arw {
   text-decoration: none;
 }
 .cta-band .callbox .v a:hover {
-  color: var(--accent-on-dark);
+  color: var(--red-deep);
 }
 .cta-band .callbox .sub {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: color-mix(in srgb, var(--paper) 55%, transparent);
+  color: var(--ink-2);
   margin-top: 10px;
 }
 
