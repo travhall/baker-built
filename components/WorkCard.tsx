@@ -1,3 +1,5 @@
+/// <reference types="react/experimental" />
+import { ViewTransition } from 'react';
 import Link from 'next/link';
 import Plate from '@/components/Plate';
 
@@ -11,10 +13,16 @@ interface Props {
 }
 
 export default function WorkCard({ name, scope, location, sheet, slug, label }: Props) {
+  const slot = (
+    <div className="img-ph work-slot" role="img" aria-label={label}><span>{label}</span></div>
+  );
   const plate = (
     <Plate>
       <div className="plate-inner">
-        <div className="img-ph work-slot" role="img" aria-label={label}><span>{label}</span></div>
+        {slug
+          ? <ViewTransition name={`project-${slug.split('/').pop()}`} share="morph" default="none">{slot}</ViewTransition>
+          : slot
+        }
       </div>
       <div className="work-block">
         <div className="wb-name">{name}</div>

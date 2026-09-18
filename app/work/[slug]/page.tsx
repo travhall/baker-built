@@ -1,3 +1,5 @@
+/// <reference types="react/experimental" />
+import { ViewTransition } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -99,6 +101,7 @@ export default async function ProjectDetail({
             <span className="tick bl"></span>
             <span className="tick br"></span>
             <div className="plate-inner">
+              <ViewTransition name={`project-${project.slug}`} share="morph" default="none">
               <div
                 className="img-ph pj-fig-slot"
                 role="img"
@@ -108,6 +111,7 @@ export default async function ProjectDetail({
                   Drop the hero shot — {project.title.toLowerCase()} · 16:9
                 </span>
               </div>
+              </ViewTransition>
             </div>
             <div className="pj-fig-cap">
               <div className="lbl">

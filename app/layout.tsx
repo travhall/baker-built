@@ -4,6 +4,7 @@ import { Zilla_Slab, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import RevealObserver from "@/components/RevealObserver";
+import RouteFocus from "@/components/RouteFocus";
 
 const zillaSlab = Zilla_Slab({
   weight: ["400", "500", "600", "700"],
@@ -88,9 +89,18 @@ export default function RootLayout({
       lang="en"
       className={`${zillaSlab.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
     >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* One-time shell entrance: runs before first paint, once per session,
+            never under reduced motion. Content stays visible without it. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!sessionStorage.getItem('bb-intro')){document.documentElement.setAttribute('data-intro','play');sessionStorage.setItem('bb-intro','1')}}catch(e){}",
+          }}
+        />
       </head>
       <body>
         <script
@@ -99,6 +109,7 @@ export default function RootLayout({
         />
         <a className="skip-link" href="#main">Skip to main content</a>
         <RevealObserver />
+        <RouteFocus />
         <Navigation />
         <main id="main" tabIndex={-1}>{children}</main>
         <Footer />
