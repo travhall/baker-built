@@ -302,7 +302,7 @@ export default async function ProjectDetail({
             </div>
             <div className="t">Get a Free Estimate</div>
             <div className="sub">
-              Tell us about your project — the estimate&apos;s free, and you
+              Tell us about your project — the estimate&apos;s free, &amp; you
               talk to the person doing the work.
             </div>
           </Link>

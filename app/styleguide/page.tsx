@@ -1,3 +1,4 @@
+import CtaBand from "@/components/CtaBand";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -807,54 +808,11 @@ export default function StyleGuide() {
           Estimate call-to-action band — closes every interior page
         </div>
         <div className="cta-band">
-          <div className="proof-tex">
-            <div className="wrap">
-              <div className="inner" style={{ padding: "56px 0" }}>
-                <div>
-                  <div
-                    className="marker"
-                    style={{ color: "rgba(244,239,227,0.6)" }}
-                  >
-                    <b>05</b> / Request an Estimate
-                  </div>
-                  <h2
-                    className="h-section"
-                    style={{ color: "var(--paper)", maxWidth: "18ch" }}
-                  >
-                    Tell us about your project. The estimate&apos;s free.
-                  </h2>
-                  <p
-                    className="lede"
-                    style={{
-                      color: "rgba(244,239,227,0.82)",
-                      marginTop: "20px",
-                    }}
-                  >
-                    A free, no-pressure estimate from the person who&apos;ll
-                    actually do the work.
-                  </p>
-                </div>
-                <div className="actions">
-                  <Link
-                    className="btn btn-accent"
-                    href="/estimate"
-                    style={{ fontSize: "14px", padding: "18px 30px" }}
-                  >
-                    Request a Free Estimate <span className="arw">→</span>
-                  </Link>
-                  <div className="callbox">
-                    <div className="k">Call / Text</div>
-                    <div className="v">
-                      <a href="tel:+16129643505">(612) 964‑3505</a>
-                    </div>
-                    <div className="sub">
-                      Mon–Fri · 8AM–5PM · Se habla español
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <CtaBand
+            markerNumber="05"
+            heading="Tell us about your project. The estimate's free."
+            body="A free, no-pressure estimate from the person who'll actually do the work — fill out the work-order request or call direct."
+          />
         </div>
 
         {/* ===== BLUEPRINT GRID ===== */}
@@ -1117,6 +1075,50 @@ export default function StyleGuide() {
               </div>
             </Link>
           </div>
+        </div>
+
+        {/* ===== FOCUS ===== */}
+        <SectionLabel label="18 / Focus Marks" />
+        <div className="mono" style={{ marginBottom: "12px" }}>
+          Keyboard focus — drafting crop marks on buttons, cards, brand and
+          drawer controls; 2px --focus outline on text links and fields. Tab
+          through this section to see it. --focus flips to --accent-on-dark
+          inside dark sections.
+        </div>
+        <div
+          style={{
+            display: "flex",
+            gap: "16px",
+            flexWrap: "wrap",
+            alignItems: "center",
+            marginBottom: "16px",
+          }}
+        >
+          <a className="btn" href="#">
+            Button <span className="arw">→</span>
+          </a>
+          <a href="#">Text link</a>
+          <div className="field" style={{ minWidth: "220px" }}>
+            <input type="text" aria-label="Sample field" placeholder="Field" />
+          </div>
+        </div>
+        <div
+          className="swatch-dark"
+          style={{
+            display: "flex",
+            gap: "16px",
+            flexWrap: "wrap",
+            alignItems: "center",
+            background: "var(--ink)",
+            padding: "24px",
+          }}
+        >
+          <a className="btn btn-accent" href="#">
+            Button on dark <span className="arw">→</span>
+          </a>
+          <a href="#" style={{ color: "var(--paper)" }}>
+            Text link on dark
+          </a>
         </div>
       </div>
     </div>

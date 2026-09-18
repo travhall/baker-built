@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 const links = [
   { href: '/services', label: 'Services' },
@@ -15,6 +15,13 @@ const links = [
 export default function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+
+  const closeAndRestoreFocus = useCallback(() => {
+    setOpen(false);
+    hamburgerRef.current?.focus();
+  }, []);
 
   // Close drawer on route change (adjusting state during render, not in an effect)
   const [prevPathname, setPrevPathname] = useState(pathname);
@@ -28,6 +35,40 @@ export default function Navigation() {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
+
+  // Drawer keyboard behavior: move focus in on open, Escape closes and returns
+  // focus to the hamburger, Tab cycles within the drawer.
+  useEffect(() => {
+    if (!open) return;
+    const drawer = drawerRef.current;
+    if (!drawer) return;
+    const focusable = () =>
+      Array.from(drawer.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
+
+    focusable()[0]?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeAndRestoreFocus();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const items = focusable();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [open, closeAndRestoreFocus]);
 
   return (
     <>
@@ -76,6 +117,7 @@ export default function Navigation() {
               <b>(612) 964‑3505</b>
             </a>
             <button
+              ref={hamburgerRef}
               className="nav-hamburger"
               onClick={() => setOpen(o => !o)}
               aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
@@ -90,7 +132,20 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile drawer */}
-      <div className={`nav-drawer${open ? ' is-open' : ''}`} aria-hidden={!open}>
+      <div
+        ref={drawerRef}
+        className={`nav-drawer${open ? ' is-open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site navigation"
+      >
+        <button
+          className="nd-close"
+          onClick={closeAndRestoreFocus}
+          aria-label="Close navigation menu"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
         <div className="nd-inner">
           <nav className="nd-links">
             {links.map(({ href, label }) => (

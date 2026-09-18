@@ -148,6 +148,61 @@ export const projects: Project[] = [
       { v: '0',             k: 'Leaks Remaining'    },
       { v: 'Mfr.',          k: 'Warranty Intact'    },
     ],
+    nextSlug: 'rear-deck',
+    nextTitle: 'Rear Deck & Stairs',
+  },
+  {
+    slug: 'rear-deck',
+    sheetNo: 'PRJ‑04',
+    title: 'Rear Deck & Stairs',
+    titleNode: <>Rear <em className="em">Deck</em> &amp; Stairs</>,
+    summary: 'A rotting, pulling-away back deck replaced with a solid, code-compliant frame, new composite surface, and stairs that finally feel safe.',
+    summaryNode: <>A rotting, pulling-away back deck replaced with a solid, code-compliant frame — <span className="em">new composite surface, and stairs that finally feel safe.</span></>,
+    scope: 'Exterior · Decking',
+    location: 'Victory',
+    duration: '≈ 1.5 Weeks',
+    crew: 'Nate + Trades',
+    status: 'Complete',
+    figCaption: 'Finished deck and stairs, looking back toward the house',
+    brief: [
+      "The old deck was original to the house and showing it — soft boards, a ledger pulling away from the rim joist, and stair stringers rotted at the base. It still held weight, but nobody was sure for how much longer.",
+      "The call was to take it down to the footings, verify the ground and posts, and rebuild the whole structure: new ledger properly flashed and bolted to the house, new framing on fresh footings, and a composite deck surface that won't need annual sealing.",
+      "The permit was pulled before demo, the framing was inspected before it was covered, and the owners walked the finished stairs and railings with us before the job closed out.",
+    ],
+    scopeItems: [
+      'Demo existing deck, stairs & railing',
+      'New footings below frost depth',
+      'Pressure-treated post, beam & joist framing',
+      'Flashed & through-bolted ledger board',
+      'Composite decking with hidden fasteners',
+      'Code-compliant stairs & landing',
+      'Railing with graspable handrail',
+      'Permit, inspection & cleanup',
+    ],
+    buildHeadline: 'Footings to final walk.',
+    phases: [
+      { number: '01', title: 'Demo & Site Prep', duration: 'Phase 01 · Day 1', body: 'The old deck, stairs, and railing came apart in sections and were hauled off. Plantings were protected and the ledger area was opened up so the condition of the rim joist could be checked.', tags: ['Selective Demo', 'Haul-Off', 'Rim Joist Check'], shotLabel: 'Old deck removed' },
+      { number: '02', title: 'Footings & Posts', duration: 'Phase 02 · Days 2–3', body: 'New footings were dug below frost depth and poured, then posts were set plumb and tied in. This is the part nobody sees later and the part that decides how long the deck lasts.', tags: ['Frost-Depth Footings', 'Post Bases', 'Layout'], shotLabel: 'Footings poured' },
+      { number: '03', title: 'Ledger & Framing', duration: 'Phase 03 · Days 3–5', body: 'The ledger was flashed and through-bolted to the house, then beams and joists went up with hangers at every connection. The framing was inspected before anything was covered.', tags: ['Flashed Ledger', 'Beams & Joists', 'Inspection'], shotLabel: 'Framing / inspection' },
+      { number: '04', title: 'Decking & Fascia', duration: 'Phase 04 · Days 6–7', body: 'Composite boards were laid with hidden fasteners and consistent gaps for drainage, then wrapped with matching fascia so the edges look finished from the yard.', tags: ['Composite', 'Hidden Fasteners', 'Fascia'], shotLabel: 'Decking going down' },
+      { number: '05', title: 'Stairs & Railings', duration: 'Phase 05 · Days 8–9', body: 'Stringers were cut and set on a solid landing, treads matched to the deck surface, and railings and a graspable handrail were installed to code.', tags: ['Stringers', 'Landing', 'Handrail'], shotLabel: 'Stairs / railing detail' },
+      { number: '06', title: 'Final Inspection & Walk', duration: 'Phase 06 · Day 10', body: 'The final inspection was signed off, the site was swept and hauled clean, and the whole deck was walked with the owners before we packed up.', tags: ['Final Inspection', 'Cleanup', 'Final Walk'], shotLabel: 'Finished deck' },
+    ],
+    beforeAfter: [
+      { label: 'Before — old deck', caption: 'Original Deck', badge: 'Before', badgeVariant: 'before' },
+      { label: 'After — new deck',  caption: 'New Deck',      badge: 'After',  badgeVariant: 'after'  },
+    ],
+    details: [
+      { label: 'Ledger detail',   caption: 'Ledger',   badge: 'Detail' },
+      { label: 'Stair detail',    caption: 'Stairs',   badge: 'Detail' },
+      { label: 'Railing detail',  caption: 'Railing',  badge: 'Detail' },
+    ],
+    results: [
+      { v: '1.5', u: ' wk', k: 'Start to Finish'   },
+      { v: '100', u: '%',   k: 'Permitted & Inspected' },
+      { v: '4',  u: ' ft',  k: 'Below Frost Line'  },
+      { v: '0',             k: 'Annual Sealing'     },
+    ],
     nextSlug: 'kitchen-remodel',
     nextTitle: 'Full Kitchen & Main-Floor Remodel',
   },
@@ -168,13 +223,14 @@ export interface WorkCardData {
   sheet: string;
   slug: string | null;
   label: string;
+  featured?: boolean;
 }
 
 export const workCards: WorkCardData[] = [
-  { name: 'Full Kitchen & Main-Floor Remodel', scope: 'Whole-Home', location: 'North Minneapolis', sheet: 'PRJ‑01', slug: '/work/kitchen-remodel', label: 'Kitchen & main-floor remodel' },
-  { name: 'Asphalt Roof Tear-Off',             scope: 'Exterior',   location: 'Camden',           sheet: 'PRJ‑02', slug: '/work/roof-tearoff',   label: 'Asphalt roof tear-off'    },
+  { name: 'Full Kitchen & Main-Floor Remodel', scope: 'Whole-Home', location: 'North Minneapolis', sheet: 'PRJ‑01', slug: '/work/kitchen-remodel', label: 'Kitchen & main-floor remodel', featured: true },
+  { name: 'Asphalt Roof Tear-Off',             scope: 'Exterior',   location: 'Camden',           sheet: 'PRJ‑02', slug: '/work/roof-tearoff',   label: 'Asphalt roof tear-off', featured: true },
   { name: 'Full-Frame Window Overhaul',         scope: 'Windows',    location: 'Webber–Camden',    sheet: 'PRJ‑03', slug: null,                   label: 'Full-frame window overhaul' },
-  { name: 'Rear Deck & Stairs',                 scope: 'Decking',    location: 'Victory',          sheet: 'PRJ‑04', slug: null,                   label: 'Rear deck & stairs'       },
+  { name: 'Rear Deck & Stairs',                 scope: 'Decking',    location: 'Victory',          sheet: 'PRJ‑04', slug: '/work/rear-deck',       label: 'Rear deck & stairs', featured: true },
   { name: 'Basement Finish',                    scope: 'Basement',   location: 'Folwell',          sheet: 'PRJ‑05', slug: null,                   label: 'Basement finish + egress' },
   { name: 'Stucco Repair & Bump-Out',           scope: 'Addition',   location: 'Jordan',           sheet: 'PRJ‑06', slug: null,                   label: 'Stucco repair & bump-out' },
 ];

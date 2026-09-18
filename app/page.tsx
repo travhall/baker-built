@@ -61,7 +61,7 @@ export default function Home() {
               </div>
               <div className="it">
                 <div className="v">
-                  No.<span className="u">1</span>
+                  No <span className="u">1</span>
                 </div>
                 <div className="k">Job too big or small</div>
               </div>
@@ -143,9 +143,7 @@ export default function Home() {
               <b>02</b> / About
             </div>
             <h2 className="h-section reveal">
-              Nate Baker{" "}
-              <span>is</span>{" "}
-              Baker Built.
+              Nate Baker <span>is</span> Baker Built.
             </h2>
             <p className="reveal d1">
               For more than <span className="em">twenty years</span> Nate has
@@ -208,9 +206,11 @@ export default function Home() {
             </Link>
           </div>
           <div className="work-grid reveal d1">
-            {workCards.map((card) => (
-              <WorkCard key={card.sheet} {...card} />
-            ))}
+            {workCards
+              .filter((card) => card.featured)
+              .map((card) => (
+                <WorkCard key={card.sheet} {...card} />
+              ))}
           </div>
         </div>
       </section>
