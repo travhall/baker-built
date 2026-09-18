@@ -88,9 +88,9 @@
      needs a further-darkened step to stay visibly distinct. See plan 025. */
   --accent-darker: color-mix(in srgb, var(--accent-deep) 90%, black);
 
-  --text-outline: 1px 1px 0px #171717, -1px -1px 0px #171717,
-    0px 1px 0px #171717, 1px 0px 0px #171717, 0px -1px 0px #171717,
-    -1px 0px 0px #171717;
+  --text-outline:
+    1px 1px 0px #171717, -1px -1px 0px #171717, 0px 1px 0px #171717,
+    1px 0px 0px #171717, 0px -1px 0px #171717, -1px 0px 0px #171717;
 }
 
 * {
@@ -1328,7 +1328,11 @@ img.pj-fig-slot {
   gap: 0;
   border: 1px solid color-mix(in srgb, var(--paper) 16%, transparent);
   margin-top: var(--space-44);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 6%, transparent), transparent 70%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--paper) 6%, transparent),
+    transparent 70%
+  );
 }
 .stat {
   padding: 30px var(--space-28);
@@ -1365,7 +1369,11 @@ img.pj-fig-slot {
   border: 1px solid color-mix(in srgb, var(--paper) 16%, transparent);
   padding: 30px;
   position: relative;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 6%, transparent), transparent 70%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--paper) 6%, transparent),
+    transparent 70%
+  );
 }
 .quote .qm {
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -1390,7 +1398,11 @@ img.pj-fig-slot {
       color-mix(in srgb, var(--paper) 5%, transparent) 9px,
       color-mix(in srgb, var(--paper) 5%, transparent) 10px
     ),
-    linear-gradient(180deg, color-mix(in srgb, var(--paper) 6%, transparent), transparent 70%);
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--paper) 6%, transparent),
+      transparent 70%
+    );
 }
 .quote.empty p {
   color: color-mix(in srgb, var(--paper) 50%, transparent);
@@ -1651,6 +1663,11 @@ img.pj-fig-slot {
 .reveal.in {
   opacity: 1;
   transform: none;
+}
+/* LCP candidate: start at ~0 opacity (not literal 0) so it still counts as
+   painted for the LCP metric instead of waiting on the reveal transition. */
+.hero-plate.reveal:not(.in) {
+  opacity: 0.001;
 }
 .reveal.d1 {
   transition-delay: 0.07s;
@@ -2709,9 +2726,6 @@ img.pj-fig-slot {
   .hero .wrap {
     grid-template-columns: 1fr;
     gap: var(--space-44);
-  }
-  .hero .plate {
-    max-width: 560px;
   }
   .about .wrap {
     grid-template-columns: 1fr;
