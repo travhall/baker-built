@@ -79,6 +79,7 @@ export default function Home() {
                   width={1200}
                   height={800}
                   priority
+                  fetchPriority="high"
                 />
               </div>
             </div>
