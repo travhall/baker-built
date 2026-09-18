@@ -46,6 +46,10 @@
      mark keeps >=3:1 (WCAG 1.4.11) on both surfaces. */
   --focus: var(--accent);
 
+  /* Plain-link text color. --red-deep passes 4.5:1 on paper; flips to
+     --accent-on-dark inside dark sections (see the focus block). */
+  --link: var(--red-deep);
+
   --maxw: 1240px;
 
   /* Spacing scale — aliases for values that already land on a 4px grid.
@@ -119,6 +123,11 @@ body {
 
 p {
   text-wrap: pretty;
+}
+
+a:not([class]) {
+  color: var(--link);
+  text-decoration: underline;
 }
 
 /* ---- blueprint graph-paper background ---- */
@@ -332,6 +341,7 @@ h4 {
 .nav-drawer,
 .swatch-dark {
   --focus: var(--accent-on-dark);
+  --link: var(--accent-on-dark);
 }
 
 :where(
@@ -1122,12 +1132,13 @@ main:focus {
   line-height: 1.5;
   margin: 0 0 var(--space-16);
 }
-.spec .tags {
+/* ---- tags: scope / trade labels ---- */
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
 }
-.spec .tags span {
+.tags span {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 10.5px;
   letter-spacing: 0.06em;
@@ -2182,19 +2193,7 @@ img.pj-fig-slot {
   background: var(--accent);
 }
 .trade .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
   margin-top: var(--space-20);
-}
-.trade .tags span {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-  border: 1px solid var(--hair);
-  padding: 5px 9px;
 }
 
 /* work index */
@@ -2641,27 +2640,15 @@ img.pj-fig-slot {
   color: var(--blue);
   font-weight: 600;
 }
+.phase .ph-body .tags span {
+  background: var(--paper-card);
+}
 .phase .ph-body p {
   font-size: 16px;
   line-height: 1.55;
   color: var(--ink-2);
   margin: 0 0 var(--space-16);
   max-width: 52ch;
-}
-.phase .ph-body .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-.phase .ph-body .tags span {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-  border: 1px solid var(--hair);
-  padding: var(--space-4) var(--space-8);
-  background: var(--paper-card);
 }
 .phase .ph-shot {
   border-left: 1px solid var(--hair);
