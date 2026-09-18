@@ -1300,6 +1300,12 @@ img.pj-fig-slot {
   position: relative;
   z-index: 1;
 }
+/* .proof's gradient belongs on the stat/quote cards, not washed across the
+   whole panel — kill the section-wide ::after here and put it on the
+   boxes below instead. */
+.proof .proof-tex::after {
+  background: none;
+}
 .proof .marker {
   color: color-mix(in srgb, var(--paper) 60%, transparent);
 }
@@ -1322,6 +1328,7 @@ img.pj-fig-slot {
   gap: 0;
   border: 1px solid color-mix(in srgb, var(--paper) 16%, transparent);
   margin-top: var(--space-44);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 6%, transparent), transparent 70%);
 }
 .stat {
   padding: 30px var(--space-28);
@@ -1358,6 +1365,7 @@ img.pj-fig-slot {
   border: 1px solid color-mix(in srgb, var(--paper) 16%, transparent);
   padding: 30px;
   position: relative;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 6%, transparent), transparent 70%);
 }
 .quote .qm {
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -1374,13 +1382,15 @@ img.pj-fig-slot {
   margin: var(--space-16) 0 0;
 }
 .quote.empty {
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 9px,
-    color-mix(in srgb, var(--paper) 5%, transparent) 9px,
-    color-mix(in srgb, var(--paper) 5%, transparent) 10px
-  );
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 9px,
+      color-mix(in srgb, var(--paper) 5%, transparent) 9px,
+      color-mix(in srgb, var(--paper) 5%, transparent) 10px
+    ),
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 6%, transparent), transparent 70%);
 }
 .quote.empty p {
   color: color-mix(in srgb, var(--paper) 50%, transparent);
