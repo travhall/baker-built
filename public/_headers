@@ -1,0 +1,5 @@
+# Preload the hero image via the response headers so the browser starts the
+# download at first byte, before it has parsed any HTML. srcset/sizes/type must
+# match the <picture> in app/page.tsx so the browser picks the same file.
+/
+  Link: </hero-cabin-800.avif>; rel=preload; as=image; imagesrcset="/hero-cabin-800.avif 800w, /hero-cabin-1200.avif 1200w"; imagesizes="100vw"; type="image/avif"; fetchpriority=high
