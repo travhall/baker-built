@@ -7,11 +7,12 @@ import RevealObserver from "@/components/RevealObserver";
 import RouteFocus from "@/components/RouteFocus";
 
 const zillaSlab = Zilla_Slab({
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  preload: false,
 });
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -26,6 +27,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
+  preload: false,
 });
 
 const description =
