@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const links = [
-  { href: '/services', label: 'Services' },
-  { href: '/about',    label: 'About'    },
-  { href: '/work',     label: 'Work'     },
-  { href: '/estimate', label: 'Estimate' },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/work", label: "Work" },
+  { href: "/estimate", label: "Estimate" },
 ];
 
 export default function Navigation() {
@@ -32,8 +32,10 @@ export default function Navigation() {
 
   // Lock body scroll while drawer is open
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   // Drawer keyboard behavior: move focus in on open, Escape closes and returns
@@ -43,17 +45,19 @@ export default function Navigation() {
     const drawer = drawerRef.current;
     if (!drawer) return;
     const focusable = () =>
-      Array.from(drawer.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
+      Array.from(
+        drawer.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"),
+      );
 
     focusable()[0]?.focus();
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         e.preventDefault();
         closeAndRestoreFocus();
         return;
       }
-      if (e.key !== 'Tab') return;
+      if (e.key !== "Tab") return;
       const items = focusable();
       if (items.length === 0) return;
       const first = items[0];
@@ -66,8 +70,8 @@ export default function Navigation() {
         first.focus();
       }
     };
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, closeAndRestoreFocus]);
 
   return (
@@ -87,10 +91,10 @@ export default function Navigation() {
         <div className="wrap">
           <Link className="brand" href="/">
             <Image
-              src="/bb-logo-transparent.png"
+              src="/logo.svg"
               alt="Baker Built Construction logo"
-              width={480}
-              height={480}
+              width={48}
+              height={42}
               priority
             />
             <span className="bk">
@@ -104,7 +108,11 @@ export default function Navigation() {
               <Link
                 key={href}
                 href={href}
-                aria-current={pathname === href || pathname.startsWith(href + '/') ? 'page' : undefined}
+                aria-current={
+                  pathname === href || pathname.startsWith(href + "/")
+                    ? "page"
+                    : undefined
+                }
               >
                 {label}
               </Link>
@@ -119,12 +127,16 @@ export default function Navigation() {
             <button
               ref={hamburgerRef}
               className="nav-hamburger"
-              onClick={() => setOpen(o => !o)}
-              aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+              onClick={() => setOpen((o) => !o)}
+              aria-label={
+                open ? "Close navigation menu" : "Open navigation menu"
+              }
               aria-expanded={open}
             >
-              <span className={`hb-icon${open ? ' is-open' : ''}`}>
-                <span /><span /><span />
+              <span className={`hb-icon${open ? " is-open" : ""}`}>
+                <span />
+                <span />
+                <span />
               </span>
             </button>
           </div>
@@ -134,7 +146,7 @@ export default function Navigation() {
       {/* Mobile drawer */}
       <div
         ref={drawerRef}
-        className={`nav-drawer${open ? ' is-open' : ''}`}
+        className={`nav-drawer${open ? " is-open" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-label="Site navigation"
@@ -153,7 +165,11 @@ export default function Navigation() {
                 key={href}
                 href={href}
                 className="nd-link"
-                aria-current={pathname === href || pathname.startsWith(href + '/') ? 'page' : undefined}
+                aria-current={
+                  pathname === href || pathname.startsWith(href + "/")
+                    ? "page"
+                    : undefined
+                }
                 onClick={() => setOpen(false)}
               >
                 {label}
@@ -163,8 +179,12 @@ export default function Navigation() {
           </nav>
           <div className="nd-contact">
             <div className="nd-label mono">Call / Text</div>
-            <a className="nd-phone" href="tel:+16129643505">(612) 964‑3505</a>
-            <div className="nd-sub mono">Mon–Fri · 8AM–5PM · Se habla español</div>
+            <a className="nd-phone" href="tel:+16129643505">
+              (612) 964‑3505
+            </a>
+            <div className="nd-sub mono">
+              Mon–Fri · 8AM–5PM · Se habla español
+            </div>
           </div>
         </div>
       </div>

@@ -529,7 +529,7 @@ main:focus {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   text-decoration: none;
   color: var(--ink);
 }
@@ -1921,10 +1921,18 @@ img.pj-fig-slot {
   html[data-intro="play"] .nav-links a {
     animation: intro-rise 0.6s var(--ease-out) both;
   }
-  html[data-intro="play"] .nav-links a:nth-child(1) { animation-delay: 0.3s; }
-  html[data-intro="play"] .nav-links a:nth-child(2) { animation-delay: 0.35s; }
-  html[data-intro="play"] .nav-links a:nth-child(3) { animation-delay: 0.4s; }
-  html[data-intro="play"] .nav-links a:nth-child(4) { animation-delay: 0.45s; }
+  html[data-intro="play"] .nav-links a:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  html[data-intro="play"] .nav-links a:nth-child(2) {
+    animation-delay: 0.35s;
+  }
+  html[data-intro="play"] .nav-links a:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  html[data-intro="play"] .nav-links a:nth-child(4) {
+    animation-delay: 0.45s;
+  }
   html[data-intro="play"] .nav-phone {
     animation: intro-rise 0.6s var(--ease-out) 0.5s both;
   }
@@ -1943,6 +1951,29 @@ img.pj-fig-slot {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
+}
+
+/* Persistent nav. Naming the nav gives it its own layer that glides between
+   its old and new position instead of fading with the page: scrolled down it
+   is stuck to the viewport top, and when the new page resets scroll it slides
+   down to its natural place under the topbar rather than snapping. The topbar
+   is deliberately NOT named: it starts out of view, so it has no old snapshot
+   to morph from, and naming it made the dark band arrive late and let page
+   content show at the very top. Unnamed, it is part of the static root
+   snapshot and is there from the first frame. The nav layer sits above the
+   content group so the fade never covers it. */
+.nav {
+  view-transition-name: site-nav;
+}
+::view-transition-group(site-nav) {
+  z-index: 100;
+  animation-duration: 320ms;
+  animation-timing-function: var(--ease-out);
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(site-nav) {
+    animation-duration: 0.01s;
+  }
 }
 @keyframes vt-out {
   to {
