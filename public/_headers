@@ -1,7 +1,0 @@
-# Preload the hero image via the response headers so the browser starts the
-# download at first byte, before it has parsed any HTML. The media conditions
-# must match the <source media> in app/page.tsx so header and page always pick
-# the same file (a srcset-based preload picks before layout and can mismatch).
-/
-  Link: </hero-cabin-800.avif>; rel=preload; as=image; type="image/avif"; media="(max-width: 700px)"; fetchpriority=high
-  Link: </hero-cabin-1200.avif>; rel=preload; as=image; type="image/avif"; media="not all and (max-width: 700px)"; fetchpriority=high

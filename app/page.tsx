@@ -73,13 +73,11 @@ export default function Home() {
               <div className="plate-inner">
                 {/* next/image is unoptimized in static export, so <picture> serves AVIF with a JPEG fallback */}
                 <picture>
-                  {/* media (not srcset/sizes) so public/_headers can preload the exact same file */}
                   <source
                     type="image/avif"
-                    media="(max-width: 700px)"
-                    srcSet="/hero-cabin-800.avif"
+                    srcSet="/hero-cabin-800.avif 800w, /hero-cabin-1200.avif 1200w"
+                    sizes="100vw"
                   />
-                  <source type="image/avif" srcSet="/hero-cabin-1200.avif" />
                   <img
                     className="hero-slot"
                     src="/hero-cabin.jpg"
