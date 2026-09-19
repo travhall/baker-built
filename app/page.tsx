@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { cloneElement } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import ProofRecord from "@/components/ProofRecord";
@@ -72,15 +71,23 @@ export default function Home() {
           <div className="hero-plate reveal d2">
             <div className="plate">
               <div className="plate-inner">
-                <Image
-                  className="hero-slot"
-                  src="/hero-cabin.jpg"
-                  alt="Custom home built by Baker Built Construction"
-                  width={1200}
-                  height={800}
-                  priority
-                  fetchPriority="high"
-                />
+                {/* next/image is unoptimized in static export, so <picture> serves AVIF with a JPEG fallback */}
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcSet="/hero-cabin-800.avif 800w, /hero-cabin-1200.avif 1200w"
+                    sizes="100vw"
+                  />
+                  <img
+                    className="hero-slot"
+                    src="/hero-cabin.jpg"
+                    alt="Custom home built by Baker Built Construction"
+                    width={1200}
+                    height={800}
+                    decoding="async"
+                    fetchPriority="high"
+                  />
+                </picture>
               </div>
             </div>
           </div>

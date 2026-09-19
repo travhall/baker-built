@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="top">
           <div className="brand-f">
             <Image
-              src="/bb-logo-ondark.png"
+              src="/logo-ondark.svg"
               alt="Baker Built Construction"
               width={480}
               height={480}
